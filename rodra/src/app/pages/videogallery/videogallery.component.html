@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="--color:white" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="--color:whitesmoke">
+      Video Gallery
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <h4>Check 7CPC ePPO</h4>
+    <video width="350" height="200" controls poster="../../assets/imgs/videobg.png" (play)="playVideo();">
+            
+      <source  src="https://rodra.gov.in/Video/7cpc.mp4" type="video/mp4">
+    </video>
+  </ion-card>
+  <ion-card>
+    <h4>ECHS Application</h4>
+    <video width="350" height="200" controls poster="../../assets/imgs/videobg1.jpeg" (play)="playVideo();">
+      <source  src="https://rodra.gov.in/Video/ECHS Movie.mp4" type="video/mp4">
+     
+    </video>
+  </ion-card>
+  <ion-card>
+    <h4>7CPC Revision Form</h4>
+    <video width="350" height="200" controls poster="../../assets/imgs/videobg2.jpeg" (play)="playVideo();">
+      <source   src="https://rodra.gov.in/Video/SUBMITTING 7CPC REVISION FORM.mp4" type="video/mp4">
+      
+    </video>
+  </ion-card>
+</ion-content>

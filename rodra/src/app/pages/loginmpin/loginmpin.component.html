@@ -1,0 +1,22 @@
+<ion-content>
+  <div class="login-section ion-padding">
+    <div class="heading ion-padding">
+      <!-- <ion-avatar>
+        <img class="logo" src="../../../assets/imgs/logo.png">
+      </ion-avatar> -->
+    </div>
+    <div class="login-form ion-padding ">
+      <div>
+        <h3 style="color: aliceblue;">Enter OTP</h3>
+        <div style="margin-left: 9%;">
+        <ng-otp-input class="otp"  #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+      </div>
+      </div>
+    </div>
+    <div class="action-button ion-padding">
+      <!-- <p class="forgetText" routerLink="/creatempin" style="color: aliceblue;">Create MPIN</p> -->
+      <ion-button expand="round" size="large" class="login-button" style="color: black;">Login</ion-button>
+     <h5 class="logText" routerLink="/login" style="color: aliceblue;">Back To Home</h5>
+    </div>
+  </div>
+</ion-content>

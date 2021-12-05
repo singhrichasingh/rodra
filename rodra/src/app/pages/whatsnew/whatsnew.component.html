@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="--color:white" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="--color:whitesmoke">
+      What's New
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card style="margin-top: 2vh">
+    <ion-slides  pager="true" [options]="slideOpts" style="height: 85vh;background: aliceblue">
+      <ion-slide *ngFor="let list of whatsNew" class="custom">
+        <li><img style="width:60px ;" src="../../../assets/imgs/New.gif"/>   {{list.name}}<p style="color: blue;" (click)="openInBrowser(list.link)">View Letter</p></li>
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+</ion-content>

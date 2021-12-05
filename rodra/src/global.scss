@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.popClass{
+    --width:96vw
+}
+.popInfo{
+    --width:60vw;
+    top:-16%;
+    ion-item{
+        background: aliceblue;
+    }
+   
+
+
+}

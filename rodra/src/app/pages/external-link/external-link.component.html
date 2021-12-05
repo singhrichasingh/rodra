@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="--color:aliceblue" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      Important Link
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let ext of  externalLink" style="padding:2%;background: aliceblue">
+  <ion-row> <ion-col size="9"> <h3><a href="{{ext.url}}">{{ext.name}}</a></h3></ion-col>
+    <ion-col size="3"><ion-button style=" --background: #f9c67a;"><a href="{{ext.url}}" style="color:black">Visit</a></ion-button></ion-col>
+    
+    </ion-row>
+  <!-- <h3><a href="https://sparsh.defencepension.gov.in">SPRASH</a></h3>
+  <h3><a href="https://echs.gov.in/">ECHS</a></h3>
+  <h3><a href="https://www.indianarmyveterans.gov.in/">DIAV</a></h3>
+  <h3><a href="https://indianarmy.nic.in/">Indian Army</a></h3>
+  <h3><a href="https://pcdapension.nic.in/pcda/index.php">PCDA(Pension)</a></h3>
+  <h3><a href="https://pcdaopune.nic.in/">PCDA(Officers)</a></h3>
+  <h3><a href="https://cgda.nic.in/">CGDA</a></h3>
+  <h3><a href="https://csdindia.gov.in/">Canteen Store Department</a></h3>
+  <h3><a href="https://ksb.gov.in/">KSB</a></h3>
+  <h3><a href="https://pgportal.gov.in/">CPGRAM</a></h3>
+  <h3><a href="https://sainiksamachar.nic.in/">Sainik Samachar</a></h3>
+  <h3><a href="https://www.mod.gov.in/">Min of Defence</a></h3>
+  <h3><a href="https://www.desw.gov.in/">Dept of ESW</a></h3>
+  <h3><a href="https://www.pensionseva.sbi/WebPages/Login/Login.aspx">SBI Pension Seva</a></h3> -->
+</ion-card>
+</ion-content>

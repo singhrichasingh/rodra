@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="--color:white" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Create New MPIN
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+
+  <div>
+    <!-- <div class="heading ion-padding">
+      <ion-avatar>
+        <img class="logo" src="../../../assets/imgs/logo.png">
+      </ion-avatar>
+    </div> -->
+    <!-- <h3>Create a MPIN to login with Rodra</h3> -->
+    <div>
+      <h3 class="txt">Enter New MPIN</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+    </div>
+    <div>
+      <h3 class="txt">Confirm MPIN</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button expand="round" size="large" class="login-button">Create New MPIN</ion-button>
+     <h4 class="logText" routerLink="/login">Login With MPIN</h4>
+    </div>
+  </div>
+
+</ion-content>

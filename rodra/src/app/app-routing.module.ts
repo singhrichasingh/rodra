@@ -1,10 +1,23 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BookappointmentComponent } from './pages/bookappointment/bookappointment.component';
+import { AboutComponent } from './pages/about/about.component';
+import { BookAppointmentComponent } from './pages/book-appointment/book-appointment.component';
+import { ChangePassComponent } from './pages/change-pass/change-pass.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { CreatempinComponent } from './pages/creatempin/creatempin.component';
+import { DownloadsComponent } from './pages/downloads/downloads.component';
+import { ExternalLinkComponent } from './pages/external-link/external-link.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { GrievancesComponent } from './pages/grievances/grievances.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MainpageComponent } from './pages/mainpage/mainpage.component';
+import { LoginmpinComponent } from './pages/loginmpin/loginmpin.component';
+import { OtpComponent } from './pages/otp/otp.component';
+import { PersonalInfoComponent } from './pages/personal-info/personal-info.component';
+import { PopmenuComponent } from './pages/popmenu/popmenu.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { StatusComponent } from './pages/status/status.component';
+import { VideogalleryComponent } from './pages/videogallery/videogallery.component';
+import { WhatsnewComponent } from './pages/whatsnew/whatsnew.component';
 
 const routes: Routes = [
   {
@@ -17,25 +30,72 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: "mainpage",
-    component: MainpageComponent,
+    path: 'mpinlogin',
+    component:LoginmpinComponent,
   },
   {
-    path: "register",
+    path: 'login',
+    component:LoginComponent,
+  },
+  {
+    path: 'creatempin',
+    component:CreatempinComponent,
+  },{
+    path: 'faq',
+    component:FaqComponent,
+  },{
+    path: 'popmenu',
+    component: PopmenuComponent,
+  },{
+    path: 'personalInfo',
+    component: PersonalInfoComponent,
+  },
+  {
+    path: 'extlink',
+    component: ExternalLinkComponent,
+  },
+  {
+    path: 'download',
+    component: DownloadsComponent,
+  },{
+    path: 'whatsnew',
+    component: WhatsnewComponent,
+  },{
+    path: 'video',
+    component: VideogalleryComponent,
+  },{
+    path: 'about',
+    component: AboutComponent,
+  },{
+    path: 'otp',
+    component: OtpComponent,
+  },
+  {
+    path: 'changePass',
+    component: ChangePassComponent,
+  },{
+    path: 'book',
+    component: BookAppointmentComponent,
+  },{
+    path: 'register',
     component: RegisterComponent,
   },
   {
-    path: "login",
-    component: LoginComponent,
+    path: 'status',
+    component: StatusComponent,
+  },{
+    path: 'contact',
+    component: ContactComponent,
+  },{
+    path: 'grievance',
+    component: GrievancesComponent,
   },
-  {
-    path: "faq",
-    component: FaqComponent,
-  },
-  {
-    path: "appoint",
-    component: BookappointmentComponent,
-  },
+  
+ 
+  
+
+  
+ 
 ];
 
 @NgModule({

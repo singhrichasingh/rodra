@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="color:aliceblue" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      More...
+    </ion-title>
+    </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-card>
+        <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+          <ion-segment (ionChange)="show($event)">
+            <ion-segment-button value="status">
+              <ion-label>7CPC ePPO Status</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="exgratia">
+              <ion-label>Exgratia SSCOs/ECOs</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+      </ion-card>
+      <ion-card>
+     
+      <div *ngIf="toShow" class="login-section ion-padding">
+    
+        <div class="login-form ion-padding ">
+          <div class="form-input">
+            
+            <ion-item lines="none">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <!-- <ion-label position="floating">Email</ion-label> -->
+              <ion-input type="mail" placeholder="Personal No of Offr" [(ngModel)]="username"></ion-input>
+            </ion-item>
+          </div>
+          <div class="form-input">
+            
+            <ion-item lines="none">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <!-- <ion-label position="floating">Email</ion-label> -->
+              <ion-input type="mail" placeholder="Enter Captcha" [(ngModel)]="username"></ion-input>
+            </ion-item>
+          </div>
+          <ion-item lines="none" style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+            <!-- <ion-label position="floating">Email</ion-label> -->
+            <ion-text >7GR4</ion-text>
+          </ion-item>
+          <div class="action-button ion-padding">
+            <ion-button expand="round" size="large" class="login-button" style="color: black;">Check Status</ion-button>
+            <p class="forgetText" routerLink="/creatempin" style="color: aliceblue;margin-top: 3%;">Login</p>
+           <h5 class="logText" routerLink="/home" style="color: aliceblue;">Sign Up</h5>
+          </div>
+          </div>
+          </div>
+
+
+          <div *ngIf="!toShow" class="login-section ion-padding">
+    
+            <div class="login-form ion-padding ">
+              <div class="form-input">
+                
+                <ion-item lines="none">
+                  <ion-icon name="lock-closed-outline"></ion-icon>
+                  <!-- <ion-label position="floating">Email</ion-label> -->
+                  <ion-input type="mail" placeholder="Personal No" [(ngModel)]="username"></ion-input>
+                </ion-item>
+              </div>
+              <div class="action-button ion-padding">
+                <ion-button expand="round" size="large" class="login-button" style="color: black;">Check Status</ion-button>
+              
+              </div>
+              </div>
+              </div>
+       
+        </ion-card>
+    </ion-content>

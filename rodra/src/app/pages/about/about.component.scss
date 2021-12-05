@@ -1,0 +1,11 @@
+ion-content{
+    // --background:linear-gradient(#ff0000,#ff1a1a,#ff3333,#ff5050 ,#ff6666,#ff8080);
+     --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+   // --background-size: 300px 100px
+   }
+
+   ion-card{
+       padding: 3%;
+       font-size: 1.2em;
+       background: aliceblue;
+   }

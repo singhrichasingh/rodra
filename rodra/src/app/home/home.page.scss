@@ -25,3 +25,21 @@
 #container a {
   text-decoration: none;
 }
+.sc-ion-popover-md-h.popClass{
+  --width:100px;
+}
+ion-content>div{
+ // --background:radial-gradient(#ff8080,#ff6666,#ff5050,#ff3333,#ff1a1a,#ff0000);
+  //--background: url('../../assets/imgs/homefinalbg.png') center center / cover;
+  background: url('../../assets/imgs/homefinalbg.png') center center / cover;
+// --background-size: 300px 100px
+
+
+// background: url(../../assets/imgs/homefinalbg.png);
+// border: 3px solid black;
+// height: 100%;
+// /* background: url(); */
+// background-repeat: no-repeat;
+// background-size: contain;
+
+}

@@ -1,20 +1,46 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar  style="--background:#457B98;text-align: center;font-weight: 500;color:whitesmoke;font-size: 1.4em;"> 
+    <ion-menu-button autoHide="false" slot="start" style="color: whitesmoke;" width="20px;"></ion-menu-button>
+    <ion-title style="font-size: 1.1em;">
+      MAINPAGE
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<!-- <ion-content [fullscreen]="true" style="--background:#f7f7c6"> -->
+  <ion-content [fullscreen]="true">
+    <div >
+    <!-- <img style="margin:0;padding:0;height: 90vh;width:100vw" src="../../assets/imgs/RodraCover.jpg"/> -->
+    <ion-row style="padding-top:3% ;height:90vh;width: 100vw;">
+      <ion-col size="10" (click)="signup()" ><img style="margin-left: 5%;" width="60px" src="../../assets/imgs/SignUp1.png"/></ion-col>
+      <ion-col size="2" (click)="extrenal()" ><img  width="45px" src="../../assets/imgs/external.png"/></ion-col>
+     </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    </div>
 </ion-content>
+<ion-footer style="height: 10vh;">
+  <!-- <ion-toolbar style="--background:#8cbdd7;"> -->
+    <ion-toolbar style="--background:#f9c67a;border-top:2px solid #f9cb9c">
+    <ion-row style="color:rgb(104, 104, 247)">
+      <ion-col size="5" style="text-align: center;padding-left:4%" routerLink="/login">
+        <ion-row>
+        <img width="45px" src="../../assets/imgs/login.png">
+      </ion-row>
+      <ion-row>Login</ion-row>
+      </ion-col>
+      <ion-col size="5" style="text-align: center;" routerLink="/faq">
+        <ion-row>
+        <img width="45px" src="../../assets/imgs/faq.png">
+      </ion-row>
+        <ion-row>Ask Me</ion-row>
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" (click)="openmenu()">
+        <ion-row>
+        <img  width="40px" src="../../assets/imgs/bottommenu.png">
+      </ion-row>
+        <ion-row>Menu</ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-footer>
