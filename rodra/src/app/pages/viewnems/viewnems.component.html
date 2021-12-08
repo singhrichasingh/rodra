@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start">
+      <ion-back-button style="--color:whitesmoke" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    View NEMS(BC/PC)
+    </ion-title>
+    <ion-buttons slot="end" (click)="showMenu()">
+      <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+ <ion-content>
+  <ion-card class="details">
+    <ion-card-content>NOK Pension Entitlement Details and Tracking</ion-card-content>
+  </ion-card>
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>Richa Singh</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>Richa Singh</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>Richa Singh</span>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-card class="details">
+    <ion-card-content>Entitled Grants/AIDS Payment Status</ion-card-content>
+  </ion-card>
+  <div class="table">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <div>
+           Grants
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+           Amount Paid
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            Paid On
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            Remark If any
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let x of name">
+        <ion-col size="3">
+          <div>
+           {{x.name}}
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+           {{x.amount}}
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+           {{x.paid}}
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            {{x.remark}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+ </ion-content>

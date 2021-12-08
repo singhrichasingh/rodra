@@ -31,6 +31,10 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { RegisterComponent } from './pages/register/register.component';
 import { StatusComponent } from './pages/status/status.component';
 import { GrievancesComponent } from './pages/grievances/grievances.component';
+import { OpenlpcComponent } from './pages/openlpc/openlpc.component';
+import { ViewnemsComponent } from './pages/viewnems/viewnems.component';
+import { DownloadsecondComponent } from './pages/downloadsecond/downloadsecond.component';
+import { UpdateaddressComponent } from './pages/updateaddress/updateaddress.component';
 @NgModule({
   declarations: [AppComponent,SplashComponent,
     LoginmpinComponent,
@@ -50,7 +54,12 @@ import { GrievancesComponent } from './pages/grievances/grievances.component';
   BookAppointmentComponent,
   RegisterComponent,
   StatusComponent,
-  GrievancesComponent],
+  GrievancesComponent,
+  OpenlpcComponent,
+  ViewnemsComponent,
+  DownloadsecondComponent,
+  UpdateaddressComponent
+],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,NgOtpInputModule, HttpClientModule, FormsModule  ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },AuthService,InAppBrowser,HTTP,DatePicker],
