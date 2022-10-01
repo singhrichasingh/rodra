@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,YAAY,CAAA;2EAAC;CAEhB;;AACD,AAAA,OAAO,CAAA;EACH,OAAO,EAAE,KAAK;CACjB",
+    "sources": [
+        "whatsnew.component.scss"
+    ],
+    "names": [],
+    "file": "whatsnew.component.css"
+}

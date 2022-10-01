@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start">
+      <ion-back-button style="color:aliceblue" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      More...
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+      <ion-segment value="status" (ionChange)="show($event)">
+        <ion-segment-button value="status">
+          <ion-label style="color:whitesmoke">ePPO Status</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="exgratia">
+          <ion-label style="color:whitesmoke">Exgratia SSCOs/ECOs</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-card>
+  
+
+
+    <div *ngIf="toShow" class="login-section ion-padding">
+      <div class="login-form ion-padding ">
+        <div class="form-input">
+          <ion-item lines="none">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input type="mail" placeholder="PERSONAL NO OF OFFICER" [(ngModel)]="username" maxlength="8"
+              class="textbox"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input type="text" placeholder="ENTER CAPTCHA" [(ngModel)]="randomNumberEntered"></ion-input>
+          </ion-item>
+        </div>
+        <div>
+          <ion-row>
+            <ion-col size="9">
+              <ion-item lines="none"
+                style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+                <ion-text>
+                  <ion-col class="captcha">{{randomNumber}}</ion-col>
+                </ion-text>
+              </ion-item>
+            </ion-col>
+            <ion-col style="padding-top: 30px;color: aliceblue;">
+              <ion-buttons (click)="generateRandomNumber(1111,9999)">
+                <ion-icon name="refresh-circle-outline" style="font-size: 3.5em"></ion-icon>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </div>
+        <div class="action-button ion-padding">
+          <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="submit()">Check
+            Status</ion-button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div *ngIf="!toShow" class="login-section ion-padding">
+
+      <div *ngIf="appxShow" class="login-form ion-padding ">
+        <div class="form-input">
+
+          <ion-item lines="none">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <!-- <ion-label position="floating">Email</ion-label> -->
+            <ion-input type="mail" placeholder="PERSONAL NO" [(ngModel)]="username1" maxlength="8" class="textbox">
+            </ion-input>
+          </ion-item>
+        </div>
+        <div class="action-button ion-padding">
+          <ion-button expand="round" size="large" class="login-button" style="color: black;"
+            (click)="exGratiaEppoStatus()">Check Status</ion-button>
+
+        </div>
+      </div>
+      <div >
+        <ion-card *ngIf="!appxShow">
+          <h4 (click)="openAppx()"><a style="color:blue;font-size:20px;margin-top: 15px; padding-left: 8px;">Click Here
+              To Open Appx</a></h4>
+        </ion-card>
+      </div>
+    </div>
+
+</ion-content>

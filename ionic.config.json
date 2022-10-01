@@ -1,0 +1,16 @@
+{
+  "name": "rodra",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {
+      "enabled": false
+    }
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/goto",
+      "proxyUrl": "https://rodra.gov.in"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.my-custom-menu {
+  --width: 230px;
+  --height:365px;
+  position: fixed;
+  top: 3%;
+  left: 5px;
+}
+/*# sourceMappingURL=app.component.css.map */

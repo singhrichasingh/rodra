@@ -1,0 +1,420 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+      <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Open LPC
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;">
+      </ion-icon>
+      <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="details">
+    <ion-card-content>Basic Details</ion-card-content>
+  </ion-card>
+
+  <form *ngIf="contactForm" [formGroup]="contactForm" >
+    <!-- <ion-list *ngFor="let d of auth.lpcDetails"> -->
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Pers No</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="personal_no"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Rank</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="rank_desc"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Name</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="name"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Date of Retirement/Death</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="Retire_dt"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>PPO Number</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="PPO_No"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Latest Corrigendum PPO Number</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input type="text" formControlName="corr_ppo"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Date of Birth</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="Self_DOB"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Aadhar (Officer)</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="Self_Aadhar"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>PAN (Officer)</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="self_PAN"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Email (User)</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="text" formControlName="Self_Email"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Mobile (User)</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input [disabled]="disable" type="tel" formControlName="Self_Mobile"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Net Qualifying Service</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="number" [disabled]="disable"
+            value="{{auth.lpcDetails.NQSYR}}-{{auth.lpcDetails.NQSMTH}}-{{auth.lpcDetails.NQSDAYS}}"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-card class="details">
+      <ion-card-content>Details Spouse</ion-card-content>
+    </ion-card>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse Name</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="NOK_Name"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse DOB</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input (click)="showDatepicker('1')" class="editText" type="text" formControlName="NOK_DOB" [(ngModel)]="spouseDob"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse aadhar</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="number" maxlength="12" formControlName="NOK_Aadhar"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse PAN</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" maxlength="10" formControlName="NOK_PAN"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse Email</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="NOK_Email"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Spouse Mobile</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="tel" maxlength="10" formControlName="NOK_Mobile"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-card class="details">
+      <ion-card-content>
+        Family Pensioner(Parents/Unmarried/Widowed/Divorced Daughter/Handicapped Child) (Only if applicable)
+      </ion-card-content>
+    </ion-card>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Name</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="Depn_Name"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Date of Birth</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" (click)="showDatepicker('2')" type="text" formControlName="Depn_DOB" [(ngModel)]="depnDob"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Aadhar Card No</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="number" maxlength="12" formControlName="Depn_Aadhar"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Mobile No</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="tel" maxlength="10" formControlName="Depn_Mobile"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Email Id</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="Depn_Email"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Relation</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-select formControlName="Relation">
+            <ion-select-option *ngFor="let r of relationsTypes" [value]="r.relation_cd">{{r.relation_desc}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Family Pensioner Type</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-select formControlName="Pensioner_Type">
+            <ion-select-option *ngFor="let type of familyPensionerTypes" [value]="type.fp_type">{{type.fp_type}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-card class="details">
+      <ion-card-content>Bank Details</ion-card-content>
+    </ion-card>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>BSR Code of Link Branch</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="BSR_Code_Link_br"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Link Branch with address</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="Link_Br_Add"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Pensioner Bank A/C No</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" maxlength="15" formControlName="Pensioner_Acct_No"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>IFSC Code</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="IFSC_Code"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>BSR code of pension paying bank</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="BSRCode_paying_Bank"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Address of Branch paying Pension</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="pension_paying_br_add"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Pension paying Bank City</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="City_name_paying_bank"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>Pin Code</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="number" maxlength="6" formControlName="pincode"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <ion-row>
+        <ion-col size="5">
+          <p>CDA Account Number</p>
+        </ion-col>
+        <ion-col size="7">
+          <ion-input class="editText" type="text" formControlName="CDAACCTNO">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <!-- </ion-list> -->
+    <div class="divButton">
+      <ion-button expand="round" style=" --background: #f9c67a;;" (click)="submitBasic()">Submit</ion-button>
+      <!-- <ion-button expand="round"  style=" --background: #f9c67a;;"(click)="basicHome()">home</ion-button> -->
+    </div>
+  </form>
+</ion-content>

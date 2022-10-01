@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Update Correspondence Address
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()" style="color:whitesmoke;">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+ </ion-header>
+ <ion-content>
+  <form [formGroup]="updateAddressForm">
+   <ion-card style="background: blanchedalmond;">
+   <ion-row class="firstRow">
+     <ion-col size="4" class="heading"><p>House No.</p></ion-col>
+     <ion-col size="8"> <ion-input type="text" formControlName="houseNo" ></ion-input>
+      <div *ngFor="let error of errorMessages.houseNo">
+        <ng-container *ngIf="houseNo.hasError(error.type) && (houseNo.dirty || houseNo.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+   </ion-row>
+
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Mohalla:</p></ion-col>
+    <ion-col size="8"> <ion-input type="text" formControlName="mohalla" ></ion-input>
+      <div *ngFor="let error of errorMessages.mohalla">
+        <ng-container *ngIf="mohalla.hasError(error.type) && (mohalla.dirty || mohalla.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Vill/Town:</p></ion-col>
+    <ion-col size="8"> <ion-input type="text" formControlName="village" ></ion-input>
+      <div *ngFor="let error of errorMessages.village">
+        <ng-container *ngIf="village.hasError(error.type) && (village.dirty || village.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- <ion-row>
+    <ion-col size="4" class="heading"><p>Tehsil:</p></ion-col>
+    <ion-col size="8"> <ion-input type="text" formControlName="tehsil"></ion-input></ion-col>
+  </ion-row> -->
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Pin Code:</p></ion-col>
+    <ion-col size="8"> <ion-input maxlength="6" type="tel" formControlName="pinCode" ></ion-input>
+      <div *ngFor="let error of errorMessages.pinCode">
+        <ng-container *ngIf="pinCode.hasError(error.type) && (pinCode.dirty || pinCode.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Post Office:</p></ion-col>
+    <ion-col size="8"> <ion-input type="text" formControlName="postOffice"  ></ion-input>
+      <div *ngFor="let error of errorMessages.postOffice">
+        <ng-container *ngIf="postOffice.hasError(error.type) && (postOffice.dirty || postOffice.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Police Station:</p></ion-col>
+    <ion-col size="8"> <ion-input type="text" formControlName="policeStation" ></ion-input>
+      <div *ngFor="let error of errorMessages.policeStation">
+        <ng-container *ngIf="policeStation.hasError(error.type) && (policeStation.dirty || policeStation.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" class="heading"><p>State:</p></ion-col>
+    <ion-col size="8">
+      <ion-select  okText="Ok" cancelText="Dismiss" (ionChange)="getDistrict($event)">
+  
+        <ion-select-option *ngFor="let s of states" value="{{s.State_Code}}">{{s.State_Name}}</ion-select-option>
+        
+      </ion-select></ion-col>
+  </ion-row> 
+   <ion-row>
+    <ion-col size="4" class="heading"><p>District:</p></ion-col>
+    <ion-col size="8">
+       <ion-select  okText="Ok" cancelText="Dismiss" (ionChange)="getDistrictValue($event)">
+      <ion-select-option *ngFor="let d of district" value="{{d.District_Code}}">{{d.District_Name}}</ion-select-option>
+       </ion-select></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" class="heading"><p>Mobile No:</p></ion-col>
+    <ion-col size="8"> <ion-input type="tel" maxlength="10" formControlName="mobile" ></ion-input>
+      <div *ngFor="let error of errorMessages.mobile">
+        <ng-container *ngIf="mobile.hasError(error.type) && (mobile.dirty || mobile.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="login-button">
+    <ion-button expand="round" size="large" style="color: black;  --background: #f9c67a;" (click)="updateAddress()">Update Address</ion-button>
+  </div>
+</ion-card>
+ 
+</form>
+</ion-content>

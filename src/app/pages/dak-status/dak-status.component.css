@@ -1,0 +1,158 @@
+ion-content {
+  --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+}
+
+.login-section {
+  margin-top: 5%;
+  height: 95%;
+  width: 100%;
+  max-width: 500px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  border-top-left-radius: 46px;
+  border-top-right-radius: 46px;
+  opacity: 0.9;
+  overflow-y: auto;
+}
+
+.login-section .heading {
+  text-align: center;
+}
+
+.login-section .heading h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.login-section .login-form .form-input {
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.login-section .login-form .form-input ion-item::part(native) {
+  padding-left: 0;
+}
+
+.login-section .login-form .form-input ion-icon {
+  position: absolute;
+  z-index: 2;
+  font-size: 1.8rem;
+  left: 5px;
+  padding-left: 5px;
+}
+
+.login-section .login-form .form-input ion-label {
+  position: absolute;
+  margin-left: 35px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  top: 3px;
+}
+
+.login-section .login-form .form-input ion-input {
+  font-size: 1.2rem;
+  --padding-start: 17%;
+  color: #7b7b7b;
+}
+
+.login-section .action-button {
+  text-align: center;
+}
+
+.login-section .action-button .login-button {
+  --color: white;
+  opacity: 9999;
+  --background: #f9c67a;
+  width: 90%;
+  height: 50px;
+  margin: auto 5%;
+}
+
+.ion-item1 {
+  border: 1px solid #a0a0a0;
+  border-radius: 20px;
+}
+
+.forgetText {
+  margin-top: -5%;
+  text-align: right;
+  color: #860404;
+  font-size: 19px;
+  padding-right: 5%;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  font-family: -webkit-body;
+}
+
+.logText {
+  padding-right: 5%;
+  text-align: right;
+  color: aliceblue;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  font-family: -webkit-body;
+  font-weight: 600;
+}
+
+a {
+  color: #16ada2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.heading .logo {
+  width: auto;
+  height: 115px;
+}
+
+ion-avatar {
+  margin: auto;
+  width: 120px;
+  height: 86px;
+  border-radius: 50%;
+}
+
+.regas {
+  margin: 5% 0;
+}
+
+.registeras {
+  background: white;
+  border-radius: 21px;
+}
+
+.registeras ion-item {
+  background: none;
+  border-radius: 21px;
+}
+
+.item1 {
+  margin-top: -10px;
+}
+
+ion-card {
+  border-radius: 10px;
+  border: 1px solid #1c2f38;
+}
+
+ion-content {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text1 {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+ion-list {
+  background: #dddd;
+}
+
+ion-button {
+  color: black;
+}
+/*# sourceMappingURL=dak-status.component.css.map */

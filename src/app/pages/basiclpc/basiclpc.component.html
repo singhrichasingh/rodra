@@ -1,0 +1,230 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/personalInfo" style="color:aliceblue;font-size: 1.7em"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+     LPC Basic Details
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list >
+    <ion-card class="details">
+      <ion-card-content>Details of Offr</ion-card-content>
+    </ion-card>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5"><p>Pers No</p></ion-col>
+        <ion-col size="7"><p>:{{body.personal_no}}</p></ion-col>
+      </ion-row>   
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5"><p>Rank</p></ion-col>
+        <ion-col size="7"><p>:{{body.rank_desc}}</p></ion-col>
+      </ion-row>   
+    </ion-item>
+    <ion-item>
+      <ion-row>
+        <ion-col size="5"><p>Name</p></ion-col>
+        <ion-col size="7"><p>:{{body.name}}</p></ion-col>
+      </ion-row>      
+    </ion-item>
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Date of Birth</p></ion-col>
+          <ion-col size="7"><p>:{{body.Self_DOB}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Dt of Commission</p></ion-col>
+          <ion-col size="7"><p>:{{body.comn_dt}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Dt of Retirement/Death</p></ion-col>
+          <ion-col size="7"><p>:{{body.Retire_dt}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>PPO No</p></ion-col>
+          <ion-col size="7"><p>:{{body.PPO_No}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Aadhar (Officer)</p></ion-col>
+          <ion-col size="7"><p>:{{body.aadhar_no}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>PAN (Officer)</p></ion-col>
+          <ion-col size="7"><p>:{{body.self_PAN}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Mobile (user)</p></ion-col>
+          <ion-col size="7"><p>:{{body.Self_Mobile}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Alternate Mobile(user)</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_Mobile}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Email (user)</p></ion-col>
+          <ion-col size="7"><p>:{{body.Self_Email}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      
+     
+     
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Spouse Name</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_Name}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Spouse Dt of Birth</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_DOB}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Spouse Aadhar</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_Aadhar}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Spouse PAN</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_PAN}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p> Mobile(Spouse)</p></ion-col>
+          <ion-col size="7"><p>:{{body.NOK_Mobile}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Email (Spouse)</p></ion-col>
+          <ion-col size="7"><p>:{{body.Self_Email}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Name</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Date of Birth</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Aadhar Card No</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Email Id</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Mobile No</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Relation</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Family Pensioner Type</p></ion-col>
+          <ion-col size="7"><p>:</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>BSR Code of Link Branch</p></ion-col>
+          <ion-col size="7"><p>:{{body.Pension_paying_cit}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Link Branch With Address</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Pension Bank A/C No</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Pension Bank A/C No</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>BSR Code of Pension Paying Bank</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Address of Branch Paying Pension</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>Pension Paying Bank City</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      <ion-item>
+      <ion-row>
+        <ion-col size="5"><p>PIN Code</p></ion-col>
+        <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+      </ion-row>   
+    </ion-item> 
+    <ion-item>
+        <ion-row>
+          <ion-col size="5"><p>CDA Account Number</p></ion-col>
+          <ion-col size="7"><p>:{{body.rank_cd}}</p></ion-col>
+        </ion-row>   
+      </ion-item> 
+      
+    </ion-list>
+    <div class="divButton">
+      <ion-button expand="round" style=" --background: #f8c06b;" (click)="editBasic()">Edit Basic</ion-button>
+      <ion-button expand="round" style=" --background: #f8c06b;"(click)="openLpc()">Open LPC</ion-button>
+    </div>
+  </ion-content>

@@ -1,0 +1,626 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+    <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+  </ion-buttons>
+   <ion-title>
+   7 CPC Revision Form
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+<ion-content>
+  <div>
+    <ion-card class="details">
+      <ion-card-content>PART-A BASIC / SERVICE DETAILS</ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">ORIGINAL PPO NO</ion-label>
+        <ion-input placehoder="ppo no"></ion-input>
+      </ion-item>
+
+
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="podium-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">IC NO / PERSONAL NO</ion-label>
+        <span>SS18637</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">NAME(as per PPO)</ion-label>
+        <ion-input placehoder="name"></ion-input>
+      </ion-item>
+    </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;" >NET QUALIFYING SERVICE</ion-label>
+          <ion-input placehoder="year"></ion-input>
+          <ion-input placehoder="months"></ion-input>
+          <ion-input placehoder="days"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">CATEGORY</ion-label>
+          <ion-select   okText="Ok" cancelText="Dismiss"  >
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option  value="no">No</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">DATE OF BIRTH</ion-label>
+          <ion-input placehoder="dob"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="call-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">RANK LAST HELD</ion-label>
+          <ion-select   okText="Ok" cancelText="Dismiss"  >
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option  value="no">No</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">DATE OF COMMISSION</ion-label>
+          <ion-input placehoder="dob"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">LATEST CORR PPO NO</ion-label>
+          <ion-input placehoder="latest ppo no"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">PCDA(O) A/C NO</ion-label>
+          <ion-input placehoder="acc no"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">RANK SUBSTANTIVE</ion-label>
+          <ion-select   okText="Ok" cancelText="Dismiss"  >
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option  value="no">No</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">RETIREMENT/RELEASE/INVALID DT</ion-label>
+          <ion-input placehoder="dob"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">TYPE OF PENSION</ion-label>
+          <ion-select   okText="Ok" cancelText="Dismiss"  >
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option  value="no">No</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">DT OF DEATH(In case of FP)</ion-label>
+          <ion-input placehoder="dob"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card class="details">
+        <ion-card-content>PART-B SPOUSE / FAMILY PENSIONERS DETAILS</ion-card-content>
+      </ion-card>
+      <form  [formGroup]="personalForm" >
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">SPOUSE/FAMILY PENSIONER'S NAME</ion-label>
+          <ion-input ></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">DOB OF FAMILY PENSIONER</ion-label>
+          <ion-input ></ion-input>
+       </ion-item>
+      </ion-card>
+      <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">RELATION</ion-label>
+        <ion-select *ngIf="!editcorpsName"  okText="Ok" cancelText="Dismiss"  formControlName="corpsName">
+  
+          <ion-select-option value="yes">yes</ion-select-option>
+          <ion-select-option value="no">no</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">FAMILY PENSION SHARE %</ion-label>
+        <ion-input *ngIf="editcorpsName" [readonly]="editcorpsName"  formControlName="corpsName"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card class="details">
+      <ion-card-content>PART-D PDA DETAILS </ion-card-content>
+    </ion-card>
+      <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PDA CODE</ion-label>
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="trophy-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PDA STATION</ion-label>
+        <ion-input [readonly]="editgal"  formControlName="gal"></ion-input>
+      </ion-item>
+    </ion-card>
+   
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">DPDO CODE</ion-label>
+        
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PDA STATE CODE</ion-label>
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">BSRCODE OF PAYING BRANCH</ion-label>
+        <ion-input [readonly]="editselfAadhar" type="tel" maxlength="12"  formControlName="selfAadhar"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="call-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">BANK A/c No</ion-label>
+        <ion-input [readonly]="editselfAltMobile"  formControlName="selfAltMobile"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">IFSC CODE PAYING Br
+        </ion-label>
+        <ion-input [readonly]="edithouseNo"  formControlName="houseNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">BSR CODE OF CPPC or LINK Br
+        </ion-label>
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card class="details">
+      <ion-card-content>PART-E DISABILITY & OTHER DETAILS</ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PPO FOR DE(IF SEPARATELY GRANTED)</ion-label>
+        <ion-input [readonly]="editvillage"  formControlName="village"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">LATEST CORR PPO OF DE(IF ANY)</ion-label>
+        <ion-input [readonly]="editpostOffice"  formControlName="postOffice"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">DISABILITY FROM DATE</ion-label>
+        <ion-input [readonly]="editpoliceStation"  formControlName="policeStation"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">DISABILITY TO DATE</ion-label>
+        <ion-input [readonly]="edittehsil"  formControlName="tehsil"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">WAR INJURY ELEMENT %(WI)</ion-label>
+        <ion-input [readonly]="editpinCode"  formControlName="pinCode"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;" >% OF DISABLITY(Other than WIE)</ion-label>
+        <ion-input *ngIf="editstateDesc" [readonly]="editstateDesc" formControlName="stateDesc"></ion-input>
+        
+        
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;" >COMPOSITE DISABILITY %</ion-label>
+        
+       
+      </ion-item>
+    </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="person-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">PEN NOTIFIED AS PER COURT ORDER?</ion-label>
+          <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+            <ion-select-option value="yes">Yes</ion-select-option>
+            <ion-select-option  value="no">No</ion-select-option>
+             </ion-select>
+        </ion-item>
+      </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PPO ISSUED AS PER COURT ORDER</ion-label>
+        <ion-datetime [readonly]="editspouseDob" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="spouseDob" formControlName="spouseDob"></ion-datetime>
+        <!-- <ion-input [readonly]="editspouseDob" (click)="showDatepicker()" pickerFormat="YYYY-MM-DD" [(ngModel)]="spouseDob" formControlName="spouseDob"></ion-input> -->
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PENSION RECOMMENDED CODE</ion-label>
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card class="details">
+      <ion-card-content>CONTACT DETAILS (ARMY OFFICER)</ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">AADHAAR NO OF OFFICER</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+   <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PAN NO OF OFFICER
+        </ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">MOBILE/PHONE NO OF OFFICER</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">E-MAIL ID OF OFFICER</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    
+    <ion-card class="details">
+      <ion-card-content>CONTACT DETAILS (ARMY OFFICER)</ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">AADHAAR NO        </ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PAN NO</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">MOBILE/PHONE NO</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">E-MAIL ID</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+
+   </form>
+
+   <ion-card class="details">
+    <ion-card-content>Upload Documents</ion-card-content>
+  </ion-card>
+   <ion-card>
+    <ion-item>
+      <ion-avatar slot="start" class="itemav">
+        <img src="../../../assets/imgs/pan.jpeg">
+      </ion-avatar>
+      <ion-label position="stacked" style="font-size: 25px;">Select Document Type</ion-label>
+      <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+        <ion-select-option value="yes">Org PPO PDF(Self Attested)</ion-select-option>
+        <ion-select-option  value="no">Copy of AADHAR-SPOUSE/FP(Self Attested)</ion-select-option>
+         </ion-select>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start" class="itemav">
+        <img src="../../../assets/imgs/pan.jpeg">
+      </ion-avatar>
+      <ion-label position="stacked" style="font-size: 25px;">Select Dcoument</ion-label>
+      <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+  In case of fresh entries Pl Upload fwg docu which ever is applicable :-
+  (1) Original PPO
+  (2) Lateset corrigendum PPO if any
+  (3) Disability Pension/Element Original 
+   PPO(if disability case)
+  (4) Latest corrigendum PPO of Disability pension/Element (if
+  disability case)
+  (5) Cancelled cheque or bank Pass-Book copy showing PDA details
+  in case of bank or PPO showing current PDA
+  (6) Original PPO(granting Family Pension)
+</ion-card>
+<ion-card>
+         
+  <table id="mytable" class="table">
+    <thead>
+        <tr>
+            <th>Name of Docu</th>
+            <th>Document Status</th>
+        </tr>
+    </thead>
+    <tbody>
+
+<tr>
+
+    <td>Org PPO PDF(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Copy of AADHAR-SPOUSE/FP(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Corr PPO PDF(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Disability PPO PDF(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Disability Corr(Latest) PDF(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Cancelled Bank Cheque</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Family Pension PPO(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Copy of PAN-OFFR((Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Copy of AADHAR-OFFR(Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+<tr>
+
+    <td>Copy of PAN-SPOUSE/FP((Self Attested)</td>
+    <td >Not Uploaded</td>
+</tr>
+
+
+</tbody>
+</table>
+</ion-card>
+
+    <div class="action-button ion-padding">
+      <!-- <p class="forgetText" style="color: aliceblue" (click)="moveTo('2')">Forgot MPIN</p> -->
+      <ion-button expand="round"  class="login-button" style="color: black;" (click)="submit()">Submit</ion-button>
+      <ion-button expand="round"  class="login-button" style="color: black;" (click)="submit()">Proceed</ion-button>
+      <!-- <p class="forgetText" routerLink="/creatempin" style="color: aliceblue;margin-top: 3%;">Create MPIN</p> -->
+    </div>
+  </div>
+</ion-content> 

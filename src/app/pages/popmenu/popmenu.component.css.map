@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,oBAAoB,AAAA,SAAS,CAAA;EACzB,OAAO,CAAA,KAAC;CACT",
+    "sources": [
+        "popmenu.component.scss"
+    ],
+    "names": [],
+    "file": "popmenu.component.css"
+}

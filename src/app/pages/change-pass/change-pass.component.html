@@ -1,0 +1,81 @@
+<ion-header>
+<ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Change Password
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <div  class="login-section ion-padding">
+    
+    <div class="login-form ion-padding">
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-buttons *ngIf="showpass1" slot="start" (click)="toggleTextPassword('1','1')">
+            <ion-icon   class="itemicon" name="eye-off-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-buttons *ngIf="!showpass1" slot="start" (click)="toggleTextPassword('1','2')">
+            <ion-icon   class="itemicon" name="eye-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-input type="password" type="{{passtype1}}" placeholder="Enter Old Password" name="a" #a (keyup.enter)="moveFocus(b)" [(ngModel)]="pass"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input ">
+        
+        <ion-item lines="none">
+          <ion-buttons *ngIf="showpass2" slot="start" (click)="toggleTextPassword('2','1')">
+            <ion-icon   class="itemicon" name="eye-off-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-buttons *ngIf="!showpass2" slot="start" (click)="toggleTextPassword('2','2')">
+            <ion-icon   class="itemicon" name="eye-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-input type="password" type="{{passtype2}}" placeholder="Enter New Password" name="b" #b (keyup.enter)="moveFocus(c)" [(ngModel)]="pass1"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-buttons *ngIf="showpass3" slot="start" (click)="toggleTextPassword('3','1')">
+            <ion-icon   class="itemicon" name="eye-off-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-buttons *ngIf="!showpass3" slot="start" (click)="toggleTextPassword('3','2')">
+            <ion-icon   class="itemicon" name="eye-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-input type="password"  type="{{passtype3}}" placeholder="Confirm New Password" name="c" #c (keyup.enter)="moveFocus(d)" [(ngModel)]="pass2"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">       
+        <ion-item lines="none" style="border-radius: 12px;">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-input type="text" placeholder="Enter Captcha" [(ngModel)]="randomNumberEntered" name="d" #d (keyup.enter)="changePass()"></ion-input>
+        </ion-item>
+      </div>
+      <ion-row>
+        <ion-col size="10">
+     <ion-item lines="none" style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+      
+       <ion-text ><ion-col  class="captch">{{randomNumber}}</ion-col></ion-text>
+       
+     </ion-item>
+   </ion-col>
+   <ion-col  size="2"   style="color: aliceblue;">
+     <ion-buttons (click)="generateRandomNumber(1111,9999)" ><ion-icon name="refresh-circle-outline" style="font-size: 3em"></ion-icon></ion-buttons>
+   </ion-col>
+   </ion-row> 
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button expand="block" size="large" class="login-button" style="color: black;" (click)="changePass()">Change Password</ion-button>
+    </div>
+  </div>
+</ion-content>

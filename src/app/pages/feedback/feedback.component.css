@@ -1,0 +1,12 @@
+ion-content {
+  --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.selectStyle {
+  border: 2px solid gray;
+}
+/*# sourceMappingURL=feedback.component.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EAEN,YAAY,CAAA,8DAAC;CAEd;;AACD,AAAA,CAAC,AAAA,iBAAiB,CAAA;EACd,eAAe,EAAE,IAAI;CACxB",
+    "sources": [
+        "downloads.component.scss"
+    ],
+    "names": [],
+    "file": "downloads.component.css"
+}

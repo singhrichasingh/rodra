@@ -1,0 +1,775 @@
+<ion-header translucent class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start">
+      <ion-button  (click)="dismiss()">
+        <ion-icon name="arrow-back-outline" style="color:aliceblue;font-size: 1.7em"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title  *ngIf="textVal=='1'">Rodra Webiste</ion-title>
+    <ion-title *ngIf="textVal=='2'">Pension</ion-title>
+    <ion-title *ngIf="textVal=='3'">AGI extended</ion-title>
+    <ion-title *ngIf="textVal=='4'">documents</ion-title>
+    <ion-title *ngIf="textVal=='5'">Pensioner</ion-title>
+    <ion-title *ngIf="textVal=='6'">IAVC</ion-title>
+    <ion-title *ngIf="textVal=='7'">AOBF</ion-title>
+    <ion-title *ngIf="textVal=='8'">Entitlements on Death</ion-title>
+    <ion-title *ngIf="textVal=='9'">Wlfare Schemes</ion-title>
+    <ion-title *ngIf="textVal=='10'">ECHS</ion-title>
+    
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="faq" *ngIf="textVal=='1'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I register on rodra website?
+        </h2>
+        <p class="ion-text-wrap">A. To register the website follow the step by step instructions made available on the website itself.</p> 
+      </li>
+      
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Who all can register on the website?
+        </h2>
+        <p class="ion-text-wrap">A. The offrs of IA (less TA, NCC) can register on the website.</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What basic details one &nbsp;&nbsp;should keep handy before accessing the website for registration?
+        </h2>
+        <p class="ion-text-wrap">A. Offr/NOK must know date of commission, date of Birth, date of release/retirement/dismissal/death, mobile No (to obtain OTP) and email class.</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. What should I do, if after &nbsp;filling up the basic details, the website shows message to contact the record office?
+        </h2>
+        <p>A. Please send whatsapp message at mobile No 83680 51743 or contact at 011-2619 5669 & 2086 3044 or email the grievance on email class (offr.record@gov.in).</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. What are features of rodra website?
+        </h2>
+        <p>A. The website facilitates the veteransoffrs and their NOK/dependents to address their grievances/queries promptly for speedy action by AG/MP5(b) and concerned agencies. It also provclasses them a tool to update their data with AG/MP 5(b), the link for various websites, to download ePPOs, forms with check list of docu (subject wise) and also the contact details of PCDA (O) Pune, PCDA (P) Allahabad and MP 5 & 6.</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. If docu are uploaded on website for any purpose, still the docu need to be submitted by post?
+        </h2>
+        <p>A. Only those documents which are required in original for onward submission to PCDA (P) Allahabad and other other agencies will require to be sent by post also.</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. If, ePPO is not available to download on website, what should I do?
+        </h2>
+        <p>A. The pensioners may contact PCDA (P) Allahabad regarding ePPO. If, the same is printed get the ePPO No, check its availability on RODRA website and download for future reference. If the ePPO is not generated, fill up the 7th CPC revision form available in dropdown list of LPC-cum-Data Sheet on rodrawebsite, upload supporting docu like initial PPO, latest PPO, disability pension PPO (if any), PAN &Aadhar cards (self & spouse, only alive members), copy of cheque (pension account). If facing any difficulties in filling up the form, the saclass documents can be emailed to OIC APACC c/o PCDA (O) Pune at email class ramkc.56656@gov.in.</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. How much time does it generally take to issue ePPO after submission of requisite details?
+        </h2>
+        <p>A. On receipt of docu, APACC c/o PCDA (O) Pune downloads the documents, hand over to PCDA (O) Pune under covering Note and PCDA (O) Pune issues eLPC to PCDA (P) and the ePPO is issued by PCDA (P) Allahabad. The ePPO is uploaded by AG/MP 5 (b) on rodra website on receipt by email from OIC DPCC. The complete process normally involves 08-10 weeks of time</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 >
+          Q. What should I do if any &nbsp;details are not incl in ePPO are wrongly notified?
+        </h2>
+        <p>A. Submit an online grievance on AG/MP5(b) email class (offr.record@gov.in) with a copy to PCDA (P) Allahabad website on their website (www.pcdapension.nic.in).</p>
+      </li>
+      <li>
+        <input type="checkbox" checked>
+        <i></i>
+        <h2>
+          Q. My ePPO is uploaded on website, however the hard copy is not received?
+        </h2>
+        <p>A. ePPO are digitally signed and digitally transmitted to all agencies, hence hard copy has been done away by PCDA (P) Allahabad. Pensioner may download the same from rodrawebsite and preserve a copy for future reference, if desirous.</p>
+      </li>
+
+    </ul>
+  </div>
+
+   <!------ 2 list data  -->
+   <div class="faq" *ngIf="textVal=='2'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What details one should check in PPO?
+        </h2>
+        <p class="ion-text-wrap">A.  All the coln need to be thoroughly checked for correctness, in case of any corrections, lodge grievances with supporting documents to AG/MP 5 (b) with a copy to PCDA (P) Allahabad for speedy action..</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Only year of birth of spouse is notified in PPO, further actionn to be taken?
+        </h2>
+        <p class="ion-text-wrap">A. Full DOB of spouse must be notified in PPO to claim benefits of additional pension on attaining of the age of 80 years by the family pensioner. To get it notified, the pensioner must send the LPC (form available in download link of rodra website) duly completed in all respect alongwithAadhar& PAN cards of self & spouse to AG/MP 5 (b) through email (offr.record@gov.in) or by post.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How much time does PCDA (P) Allahabad take to issue PPO for any change in initial PPO?
+        </h2>
+        <p class="ion-text-wrap">A. Normally 3-4 months.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. My PPO has been issued, but my pension has not been commenced so far, what should I do?
+        </h2>
+        <p class="ion-text-wrap">A. Please approach your bankers alongwith a copy of PPO. The pensioner can also check the same by accessing PCDA (P) Allahabad website (www.pcdapension.nic.in) under SUVIGYA window after filling up the details.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I get my pension slip?
+        </h2>
+        <p class="ion-text-wrap">A. Please approach your bankers for the same. The pensioner can also check the same by checking PCDA (P) Allahabad website (www.pcdapension.nic.in).</p> 
+      </li> 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Should I submit the LTA form, is it mandatory?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, to avoclass any problem to the NOK after the demise of both the pensioners, the LTA form must be submitted by pensioner duly signed by the bank (PDA) to PCDA (P) Allahabad.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I check the net pension credited in my pension account?
+        </h2>
+        <p class="ion-text-wrap">A. Access Defence Pension/GOI website (www.defencepension.gov.in) and select the concerned DPDO/Bank, fill in the details and check the net pension credited in your account with breakdown.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are the rates of various Pensions?
+        </h2>
+        <p class="ion-text-wrap">A. The rates of various pensions are:-
+          Service Pension - 50% of last pay drawn
+          War Injury Element - 60% of last pay drawn for 100% disablement, for lower %age rates are proportionately reduced.
+          Disability Element - 30% of last pay drawn for 100% disablement, for lower %age rates are proportionately reduced.
+          Ordinary Family Pension - 30% of last pay drawn by the offr.
+          Dependent Family Pension- Equal to OFP.
+          Enhanced OFP - 50% of last pay drawn by offr.
+          Death in service - 10 yrs from the date of death of offr provclassedoffr had rendered min seven yrs of commissionedservice.
+          Death after retirement - 07 yrs from date of death of pensioner or 67 yrs of age whicheveris earlier.
+          Special Family Pension - 60 % of last pay drawn by offr
+          Special Dependent Family Pension - 30% of Special Family Pension i.e equal to OFP
+          Liberalised Family Pension- 100% of last pay drawn by the offr
+          Dependent Liberalised Family Pension - 60% of last pay drawn by offr for single parent and 75% of last pay drawn if both parents alive</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are rate of Constant Attendance Allowance (CAA)?
+        </h2>
+        <p class="ion-text-wrap">A. Rs 6750/- per month as per 7th CPC.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are conditions to earn Constant Attendance Allowance?
+        </h2>
+        <p class="ion-text-wrap">A. Offrmust have 100% disability attributable or aggravated by mil service and the same must be recommended by the medical board in Release Medical Board.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is blind pension?
+        </h2>
+        <p class="ion-text-wrap">A. Blind pension @ Rs4000/- per month is granted by KendriyaSainik Board (KSB) for 100% blindness to soldiers. The case needs to be processed to KSB through PCDA (P) with disability certificate issued by Govt hospital.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Can the blind pension be sanctioned after retirement?
+        </h2>
+        <p class="ion-text-wrap">A.  Yes, if the disability was persisting while in service and has aggravated post retirement. In such cases, med cert from Army Hosp or Civ surgeon is mandatory.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is premature retiree offr without completing 20 yrs of service, entitled for disability pension?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, entitled only Disability Element of Disability Pension wef 01 Jan 2006 provclassed the disability is 20% or above and has been accepted as attributable or aggravated by competent authority.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Are Short Service Commissioned offrs entitled for Disability Pension?
+        </h2>
+        <p class="ion-text-wrap">A.  Yes, provclassed the disability is 20% or above and has been accepted as attributable or aggravated by competent authority.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. I have been gtd disability Pension by Hon’ble Court, who will issue the implementation instructions?
+        </h2>
+        <p class="ion-text-wrap">A. AG/PS-4(Pension & Legal) issues the Govtsanction to implement the Court Order which is sent to PCDA (P) Allahabad to issue PPO. The complete process takes about 4-5 months.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is there any provision for pension on mercy appeal?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, provclassed the offr has rendered min pensionable service and the appeal is accepted by the competent authority. Officer or spouse needs to submit the mercy appeal with details of moveable/immovable property with liabilities on an affclassavit to AG/MP 5 (b).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are rates of Monetary Allowance attached to various gallantry medals?
+        </h2>
+        <p class="ion-text-wrap">A. Gallantry Award Monetary Allowance (Rs. Per month)
+          PVSM -20,000
+          Ashok Chakra -12000
+          MahaVir Chakra -10000
+          Kirti Chakra -9000
+          Vir Chakra -7000
+          Saurya Chakra -6000
+          Sena Medal -2000</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is the monetary allowance attached to gallantry award entitled to spouse?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, she is entitled till the time not re-married.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Does mention-in-despatch carry any monetary allowance?
+        </h2>
+        <p class="ion-text-wrap">A. No</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the procedure to claim the monetary allowance attached to gallantry award?
+        </h2>
+        <p class="ion-text-wrap">A. The offr or spouse must approach AG/MP-5(b) with a copy of gazette notification, pension acct cancelled cheque and copy of Aadharand PAN cards of self and spouse. Case is processed to PCDA (O) Pune to issue LPC-cum-Data Sheet and the award is notified in PPO by PCDA (P) Allahabad.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. I lost my gazette notification for Gallantry Award, how can I get it?
+        </h2>
+        <p class="ion-text-wrap">A. All gazettes are available on Govt of India website (www.egazzette.nic.in).The same can be downloaded from the website.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is income criteria to claim Dependent Family Pension by handicapped child or unmarried/wclassowed/divorced daughter?
+        </h2>
+        <p class="ion-text-wrap">A. Net income from all sources has to be less than Rs 9000/- per month excluding DA.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is handicapped child entitled Dependent Family Pension after marriage?
+        </h2>
+        <p class="ion-text-wrap">A. Yes</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is the wclassow drawing Ordinary Family Pension entitled OFP after re-marriage?
+        </h2>
+        <p class="ion-text-wrap">A. Yes</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are rate of reservist pension?
+        </h2>
+        <p class="ion-text-wrap">A. Yes</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is Liberalised Family Pension divisible between spouse and parents?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, depends upon the financial status of NOK and parents.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Can Ordinary Family Pension and Special Family Pension be divclassed between NOK and parents of offr?
+        </h2>
+        <p class="ion-text-wrap">A. No</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q.  Are children born out from voclass marriage entitled for share of pension?
+        </h2>
+        <p class="ion-text-wrap">A. Yes</p> 
+      </li>
+    </ul>
+  </div>
+
+  <!------ 3 list data  -->
+  <div class="faq" *ngIf="textVal=='3'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are the rates of EI?
+        </h2>
+        <p class="ion-text-wrap">A. Rs 10.00 lacs.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the procedure to claim EI?
+        </h2>
+        <p class="ion-text-wrap">A. The NOK needs to submit an application to AGIF alongwith EI certificate issued by AGIF at the time of offr’s retirement, death certificate of the offr and a copy cancelled cheque.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the period of EI?
+        </h2>
+        <p class="ion-text-wrap">A. It is 30 years from the date of retirement or 80 years of age whichever is earlier.</p> 
+      </li>
+      </ul>
+      </div>
+
+              <!------ 4 list data  -->
+   <div class="faq" *ngIf="textVal=='4'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I change or amend the spouse name in PPO?
+        </h2>
+        <p class="ion-text-wrap">A. The list of docu is provclassed in download link of this website. Complete the docu and submit with supporting docu to AG/MP 5(b).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How much time does PCDA (P) Allahabad take to notify any change in PPO?
+        </h2>
+        <p class="ion-text-wrap">A. Normally 3-4 months.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I change my home address after retirement?
+        </h2>
+        <p class="ion-text-wrap">A. Please send any legal valclass address proof, such as electricity bill, passport, Aadharcards etc to AG/MP 5(b).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Can I change the rented accommodation as my permanent home address?
+        </h2>
+        <p class="ion-text-wrap">A. No. However, it can be recorded as temporary address for correspondence.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How can I get the priority certificate to seek reservation for my children to seek their admission in professional and non-professional streams?
+        </h2>
+        <p class="ion-text-wrap">A. Please send an application to AG/MP5(b) on a plain paper.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. I have been issued Service Particular Booklet which has been lost/misplaced, how can I get the new one?
+        </h2>
+        <p class="ion-text-wrap">A. Please lodge an FIR with the nearest police station and send the appln with two joint passport size photographs (if spouse alive) with copy of FIR to AG/MP 5 (b).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. The Service Particulars Booklet issued to me has certain errors/incomplete details, how can I get it updated?
+        </h2>
+        <p class="ion-text-wrap">A. </p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the correspondence address of AG/MP 5 (b)?
+        </h2>
+        <p class="ion-text-wrap">A. The address is
+          AddlDte Gen of Manpower (Policy & Planning)/MP-5(b)
+          IHQ of MoD (Army)/AG’s Branch
+          West Block –III, Ground Floor, RK Puram
+          New Delhi - 110066</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. I am a non pensioner and have got married after release, should I get my spouse name recorded in Record of Service?
+
+        </h2>
+        <p class="ion-text-wrap">A. Yes. To record the name of spouse in ROS, please send requisite docu as per list made available in download link of website.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. My son/daughter born after my retirement/release from Army, how can I get their names recorded in my Record of Service?
+        </h2>
+        <p class="ion-text-wrap">A. Please send requisite docu as per list made available in down link of website.</p> 
+      </li>
+      </ul>
+      </div>
+
+         <!------ 5 list data  -->
+   <div class="faq" *ngIf="textVal=='5'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are actions on the part of NOK on demise of pensioner?
+        </h2>
+        <p class="ion-text-wrap">A. The revised advisory `Actions by NOK on demise of pensioner’ has ben uploaded in download link of website. Please refer the advisory and take necessary action per the instructions contained in the advisory.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. My wife has expired, what actions I need to take?
+        </h2>
+        <p class="ion-text-wrap">A. Please send a copy of death certificate of spouse to AG/MP5(b) to update record of service and to intimate PCDA (P) Allahabad to update their record.</p> 
+      </li>
+      </ul>
+      </div>
+
+              <!------ 6 list data  -->
+   <div class="faq" *ngIf="textVal=='6'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Who all are entitled for Indian Army Veteran Card (IAVC)?
+        </h2>
+        <p class="ion-text-wrap">A. IAVC is issued by AG/MP 5 & 6 to regular IA officers and SSCOs who are in receipt of pension from PCDA (P) Allahabad.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Are the regular officers who are in receipt of Disability Element only entitled for IAVC? 
+        </h2>
+        <p class="ion-text-wrap">A. No</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Who issues the ESM card to non pensioners who are ex-servicemen?
+        </h2>
+        <p class="ion-text-wrap">A. It is issued by Zila Sainik Welfare Officer.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Are the dependent of ex-servicemen issued with ESM card? 
+        </h2>
+        <p class="ion-text-wrap">A. No</p> 
+      </li>
+      </ul>
+      </div>
+                   <!------ 7 list data  -->
+   <div class="faq" *ngIf="textVal=='7'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. My AOBF subs has not yet been received, what should I do?
+        </h2>
+        <p class="ion-text-wrap">A. The AOBF stands closed wef 01 Jan 2018, presently refund is in progress for 1984 batch commissioned officers. To claim the subscribed amount, please send a cancelled cheque with personal details to AG’s Br/CW-8, Second Floor, Room No 17B, West Block III, RK Puram, New Delhi 110 066.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the amount being refunded by AOBF to members?
+        </h2>
+        <p class="ion-text-wrap">A. Its 75% of the total subscribed amount.</p> 
+      </li>
+      </ul>
+      </div>
+
+              <!------ 8 list data  -->
+   <div class="faq" *ngIf="textVal=='8'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are the entitlements/grants applicable for the NOK of a fatal Battle Casualty officer?
+        </h2>
+        <p class="ion-text-wrap">A. The entitlements are given as under:-
+          Central ex-gratia.<br>
+          Death cum Retirement Gratuity.<br>
+          Education Concession Card.<br>
+          Air Travel Concession card, @75% concession in base fare by Air India.<br>
+          Rail Travel Concession Card, @75% concession in 2nd class sleeper.<br>
+          Compensation/Pension/Terminal dues by state govt as per applicable rates.<br>
+          AWWA (Rs 15000/-) one time grant.<br>
+          Army Central Welfare Fund (ACWF) - Rs 50,000/- one time grant.<br>
+          Retention of Govt married accommodation for one year extendable to six month.<br>
+          Compassionate appointment in Central/State Govt.<br>
+          Final Settlement of account (as per credit/debit balance)<br>
+          Armed Forces Provclassent Fund (AFPP) (subscribed amount)<br>
+          Death Link Insurance Scheme (DLIS) - Rs 60,000/- (one time grant)<br>
+          Army Group Insurance Fund - Subscribed amount<br>
+          Army Group Insurance Claim - Rs75.00 lacs.<br>
+          Liberalised Family Pension (Wife) or Liberalised Dependent family pension (Parents if unmarried)</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are the entitlements/grants applicable for the NOK of an offr who dies in harness?
+        </h2>
+        <p class="ion-text-wrap">A. The entitlements are given as under:-
+          Central ex-gratia (if death is accepted as attributable to mil service).
+          Death cum Retirement Gratuity.
+          AWWA (Rs 15000/-) one time grant.
+          Army Central Welfare Fund (ACWF) - Rs 2,50,000/- one time grant.
+          Final Settlement of account (as per credit/debit balance).
+          Armed Forces Provclassent Fund (AFPP) (subscribed amount).
+          Army Group Insurance Fund - Subscribed amount.
+          Army Group Insurance Claim - Rs75.00 lacs.
+          Death Link Insurance Scheme (DLIS) - Rs 60,000/- (one time grant).
+          Ordinary Family Pension / Special Family Pension or Dependent Ordinary Family Pension (parents (if unmarried) or children if wife is not alive)).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the name of agency, which issues Rail Concession Card?
+        </h2>
+        <p class="ion-text-wrap">A. Rail Concession Cards are issued by the Central Railway through KendriyaSainik Board.</p> 
+      </li>
+      </ul>
+      </div>
+
+              <!------ 9 list data  -->
+   <div class="faq" *ngIf="textVal=='9'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What are the schemes extended by KSB to ESMs?
+        </h2>
+        <p class="ion-text-wrap">A. KSB extends the fwg schemes or benefits to ESMs & their wards (offrs and all rks) :-
+          Financial assistance to orphan children.
+          Financial assistance for treatment of serious diseases to Non Pensioner ESM not member of any health scheme.
+          Financial assistance for procuring mobility equipment for disabled ESM after retirement..</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the procedure to obtain the benefits of KSB schemes?
+        </h2>
+        <p class="ion-text-wrap">A. The claimant must approach KSB through the nearest ZilaSainik Welfare Officer. The list alongwith contact details of ZSWOs is available with `Advisory on actions to be taken by spouse on demise of pensioner’ which is available in download link of website. </p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is there any reservation in Govt universities for wards of ESM?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, there is a quota of 5% in all Universities controlled by Central Govt. However, there is embargo to extend the reservation in State Universities which directly controlled by the particular State.</p> 
+      </li>
+      </ul>
+      </div>
+
+   <!------**** 10 list data  -->
+   <div class="faq" *ngIf="textVal=='10'">
+    <ul > 
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Who all are eligible for ECHS membership?
+        </h2>
+        <p class="ion-text-wrap">A. ESM, SSCOs & ECOs non pensioner (Only self & spouse), dependent unemployed & unmarried/divorced/wclassowed daughter, handicapped child, son (upto the age of age of 25 yrs) and dependent parents.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the income criteria for dependency to become ECHS member?
+        </h2>
+        <p class="ion-text-wrap">A. The income from all sources should not exceed Rs 9000/- per month excluding DA. The income certificate issued by district revenue authority or tehsildar is required to be submitted to AG/MP 5 (b) to endorse dependency status in ROS of officer.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the procedure to apply for ECHS? 
+        </h2>
+        <p class="ion-text-wrap">A. To submit ECHS application, the beneficiary is required to register on the ECHS website (www.echs.gov.in) and to fill up the application form online.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. The verification of ECHS application in case of offrs is carried out by which agency?
+        </h2>
+        <p class="ion-text-wrap">A. The verification of online ECHS application is carried out by AG/MP 5(b) in the case of regular IA offrs and ECOs/SSCOs (less AMC, MNS, ADC, TA, NCC).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. The verification of ECHS application of AMC offrs is carried out by which agency?
+        </h2>
+        <p class="ion-text-wrap">A. Its verified by MPRS (O), `L’ Block, DGAFMS.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What action is required to be done the offr/NOK where the ECHS online application has been kept under observation? 
+        </h2>
+        <p class="ion-text-wrap">A. The offr / NOK is required to access the ECHS website with the user class (mobile No) and password. Examine the observation raised by AG/MP5(b) and carry out the amendments, if any and submit it for verification by AG/MP 5 (b).</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Who all are 
+        </h2>
+        <p class="ion-text-wrap">A. ESM,</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How much time does AG/MP 5 (b) take to verify the ECHS application? 
+        </h2>
+        <p class="ion-text-wrap">A. Generally five working days.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. How much time does it take in issue of ECHS cards? 
+        </h2>
+        <p class="ion-text-wrap">A. Due to backlog with ECHS Regional Centre due to covclass, ECHS Dte normally takes 6-7 months in printing of cards from the date of verification of application.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the procedure to amend, wrongly filled in email class or Mobile No in ECHS application? 
+        </h2>
+        <p class="ion-text-wrap">A. Offr / NOK needs to submit the revertapplication request online where the cards have not been printed. The request will be approved by AG/MP5(b) and the offr/NOK will be able to carry out amendments in the application. However, if cards have already been printed, the same will be amended by initiating change in data request which will be approved by AG/MP 5(b) and Offr/NOK will be able to carry out the changes in application.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. I lost my ECHS password, how can I reset it? 
+        </h2>
+        <p class="ion-text-wrap">A. To reset ECHS password, Offr/NOK is required to follow the procedure for forgot password option available onlineon ECHS website which can be reset by either provclassing the security questions or entering the OTP through registered email. If still not able to reset the password, the offr / NOK is required to approachthe Regional Centre ECHS.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Is there any involvement of AG/MP5(b) for issuance of ECHS cards after verification?
+        </h2>
+        <p class="ion-text-wrap">A. No. The responsibility of AG/MP 5(b) is only to verifyECHS application online. Printing of cards is the sole responsibility of the Regional Centre ECHS, Delhi Cantt.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. When the Offr / NOK should approach the Station HQ for collection of cards?
+        </h2>
+        <p class="ion-text-wrap">A. The offr / NOK are required to report to Station HQ on receipt of SMS OTP which is sent to the Offr / NOK on his registered mobile No.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. What is the white card?
+        </h2>
+        <p class="ion-text-wrap">A. The white card is the priority card issued to War Veterans Offrs, anddependent of veterans offrswith disability as per PWD Act 2016.</p> 
+      </li>
+      <li >
+        <input type="checkbox" checked>
+        <i></i>
+        <h2 class="ion-text-wrap">
+          Q. Are the War Disabled soldiers issued with any kind of special card?
+        </h2>
+        <p class="ion-text-wrap">A. Yes, they are issued with white card endorsed with War Veteran.</p> 
+      </li>
+      </ul>
+      </div>
+</ion-content>

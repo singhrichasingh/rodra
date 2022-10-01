@@ -1,0 +1,22 @@
+ion-content {
+  --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.details {
+  text-align: center;
+  border-radius: unset;
+  width: 100%;
+  margin: auto;
+  color: black;
+  --background: #f9c67a;
+}
+
+.details ion-card-content {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+/*# sourceMappingURL=downloadsecond.component.css.map */

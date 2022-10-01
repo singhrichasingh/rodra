@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/home" style="color:aliceblue;font-size: 1.7em"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      FAQs
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="help">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <h3 class="ion-text-wrap">This section contains a wealth of informations, related to RODRA WEB and its
+          functions. If you cannot find an answer to your question, make sure to contact us.</h3>
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <!-- <ion-list> -->
+    <ion-card class="itemcard" (click)="faqmoreClick(x.id)" *ngFor="let x of data">
+      <ion-item lines="none">
+        <ion-label>
+          <h2 class="ion-text-wrap">{{x.text}}</h2>
+        </ion-label>
+        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card>
+  <!-- </ion-list> -->
+</ion-content>

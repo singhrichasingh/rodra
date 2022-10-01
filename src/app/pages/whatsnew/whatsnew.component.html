@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="--color:white" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="--color:whitesmoke">
+      What's New
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-card style="margin-top: 2vh">
+    <div class="form-group">
+      <ion-input type="text" class="form-control" placeholder="Search Here..." [(ngModel)]="term"></ion-input>
+  </div>
+  <!-- <li *ngFor="let list of whatsNew | filter:term"><img style="width:60px ;" src="../../../assets/imgs/New.gif"/>   {{list.name}}<p style="color: blue;" (click)="openInBrowser(list.name,list.link)">View Letter</p></li> -->
+
+    <ion-slides  pager="true" [options]="slideOpts" style="height: 85vh;background: aliceblue">
+      <li  *ngFor="let list of whatsNew | filter:term">
+      <ion-slide  class="custom" >
+        <img style="width:60px ;" src="../../../assets/imgs/New.gif"/>   {{list.Title}}<p style="color: blue;" (click)="openInBrowser(list.Title,list.FileURL)">View Letter</p>
+      </ion-slide>
+    </li>
+    </ion-slides>
+  </ion-card>
+
+</ion-content>

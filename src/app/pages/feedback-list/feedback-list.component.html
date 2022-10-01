@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="color:aliceblue" defaultHref="/feedback"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      FEEDBACK LIST
+    </ion-title>   
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let list of feedbacklist">
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Name</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.Name}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Grade</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.Grade}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Comment</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.Comments}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Created Date</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.CreateDate}}</h6>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

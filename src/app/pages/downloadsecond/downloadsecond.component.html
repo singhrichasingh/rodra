@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Downloads 
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="form-group">
+    <ion-input type="text" class="form-control" placeholder="Search Here..." [(ngModel)]="term"></ion-input>
+</div>
+  <ion-card class="details">
+    <ion-card-content>Policies</ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let d of policyForm  | filter:term">
+    <ion-row> <ion-col size="10"> <h3><a (click)="open(d.FileURL)">{{d.FileName}}</a></h3></ion-col>
+      <ion-col size="2"><a (click)="open(d.FileURL)"><ion-icon name="download-outline" style="font-size: 2em;margin: 50% 0;"></ion-icon></a></ion-col>
+      
+      </ion-row>
+  </ion-card>
+  <ion-card class="details">
+    <ion-card-content>Forms</ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let d of ppoForm  | filter:term">
+    <ion-row> <ion-col size="10"> <h3><a (click)="open(d.FileURL)">{{d.FileName}}</a></h3></ion-col>
+      <ion-col size="2"><a (click)="open(d.FileURL)"><ion-icon name="download-outline" style="font-size: 2em;margin: 50% 0;"></ion-icon></a></ion-col>
+      
+      </ion-row>
+  </ion-card>
+  <ion-card class="details">
+    <ion-card-content>PPOs/Forms 16</ion-card-content>
+  </ion-card>
+  <ion-card *ngFor="let d of forms  | filter:term">
+    <ion-row> <ion-col size="10"> <h3><a (click)="open(d.FileURL)">{{d.FileName}}</a></h3></ion-col>
+      <ion-col size="2"><a (click)="open(d.FileURL)"><ion-icon name="download-outline" style="font-size: 2em;margin: 50% 0;"></ion-icon></a></ion-col>
+      
+      </ion-row>
+  </ion-card>
+  <!-- <ion-card *ngFor="let d of downloads">
+    <ion-row> <ion-col size="10"> <h3><a href="{{d.FileURL}}">{{d.FileName}}</a></h3></ion-col>
+      <ion-col size="2"><a (click)="open(d.FileURL)"><ion-icon name="download-outline" style="font-size: 2em;margin: 50% 0;"></ion-icon></a></ion-col>
+      
+      </ion-row>
+  </ion-card> -->
+</ion-content>

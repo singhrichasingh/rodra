@@ -1,0 +1,211 @@
+<ion-header>
+  <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+      <ion-icon style="--color:rgb(143, 106, 106);font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      Personal Informations
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+      <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+    
+  </ion-toolbar>
+ </ion-header>
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Pers No</ion-label>
+        <span>{{auth?.userData?.peronalNo}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="podium-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Rank</ion-label>
+        <span>{{auth?.userData?.rankDesc}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>{{auth?.userData?.name}}</span>
+      </ion-item>
+    </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Date of Birth</ion-label>
+          <span>{{auth?.userData?.birthDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Dt of Commission</ion-label>
+          <span>{{auth?.userData?.commisionDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Dt of Retirement/Death</ion-label>
+          <span>{{auth?.userData?.retirementDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">PPO No</ion-label>
+          <span>{{auth?.userData?.ppoNo}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <img src="../../../assets/imgs/pan.jpeg">
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">PAN (Officer)</ion-label>
+          <span>{{auth?.userData?.selfPan}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="podium-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Arms/Service</ion-label>
+          <span>{{auth?.userData?.corpsName}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card><ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="trophy-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Gal Award</ion-label>
+        <span>{{auth?.userData?.gal}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Aadhar (Officer)</ion-label>
+        <span>{{auth?.userData?.selfAadhar}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="call-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Mobile (user)</ion-label>
+        <span>{{auth?.userData?.selfMobile}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="call-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Alternate Mobile (user)</ion-label>
+        <span>{{auth?.userData?.selfAltMobile}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Email (user)</ion-label>
+        <span>{{auth?.userData?.selfEmail}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse Name</ion-label>
+        <span>{{auth?.userData?.spouseName}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse Date of Birth</ion-label>
+        <span>{{auth?.userData?.spouseDob}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse Aadhar</ion-label>
+        <span>{{auth?.userData?.spouseAadhar}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse PAN</ion-label>
+        <span>{{auth?.userData?.spousePanNo}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Present Address</ion-label>
+        <span>{{auth?.userData?.address}}<br/>Pincode: {{auth?.userData?.pinCode}} </span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="document-attach-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">
+          7 CPC Upload Date(User)
+        </ion-label>
+        <span>
+          {{auth?.userData?.CpcUploadDate}}
+        </span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="document-attach-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">7 CPC Download <br/>Date(APACC)</ion-label>
+        <span>{{auth?.userData?.CpcDownloadDate}}</span>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

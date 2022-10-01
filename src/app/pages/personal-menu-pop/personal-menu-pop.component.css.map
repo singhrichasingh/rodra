@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACF,mBAAmB,CAAA,KAAC;EACpB,sBAAsB,CAAA,KAAC;CAC1B",
+    "sources": [
+        "personal-menu-pop.component.scss"
+    ],
+    "names": [],
+    "file": "personal-menu-pop.component.css"
+}

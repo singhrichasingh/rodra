@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+      <ion-icon style="--color:#8f6a6a;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start" >
+      <ion-back-button style="color:aliceblue" defaultHref="/book"></ion-back-button>
+    </ion-buttons>
+   
+    <ion-title>
+      Scheduled Visits
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+      <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-card *ngFor="let list of scheduleList">
+    <ion-item lines="none"> 
+        <ion-label>
+          <strong>
+          <h6 class="ion-text-wrap text1">Appointment Id</h6>
+        </strong>
+        </ion-label>
+        <ion-label>
+          <h6 class="ion-text-wrap">{{list.AppointmentID}}</h6>
+        </ion-label>
+      </ion-item>
+     <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Reference No</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap"> {{list.ReferenceNo}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Mobile No</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap"> {{list.MobileNo}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Email Id</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.EmailID}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Purpose of Visit</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.PurposeOfVisit}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Status</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap"> {{list.StatusDesc}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1"> Date of Visit</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.DateOfVisit | date: 'dd/MM/yyyy'}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none"> 
+      <ion-label>
+        <strong>
+        <h6 class="ion-text-wrap text1">Preferred Time</h6>
+      </strong>
+      </ion-label>
+      <ion-label>
+        <h6 class="ion-text-wrap">{{list.PreferTime}}</h6>
+      </ion-label>
+    </ion-item>
+    <ion-button *ngIf="list.StatusDesc!='Cancel'" class="login-button" (click)="reschedule(list)">Reschedule</ion-button>
+    <ion-button class="login-button" *ngIf="list.StatusDesc!='Cancel'" (click)="cancelAppointment(list.AppointmentID)">Cancel</ion-button>
+    </ion-card>
+  </ion-content>

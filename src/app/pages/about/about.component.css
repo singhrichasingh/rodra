@@ -1,0 +1,10 @@
+ion-content {
+  --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+}
+
+ion-card {
+  padding: 3%;
+  font-size: 1.2em;
+  background: aliceblue;
+}
+/*# sourceMappingURL=about.component.css.map */

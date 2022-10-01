@@ -1,0 +1,388 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+    <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+  </ion-buttons>
+   <ion-title>
+    Edit Profile
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+<ion-content>
+  <div>
+    <ion-card class="details">
+      <ion-card-content>Non Editable</ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Pers No</ion-label>
+        <span>{{data.peronalNo}}</span>
+      </ion-item>
+
+
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="podium-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Rank</ion-label>
+        <span>{{data.rankDesc}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>{{data.name}}</span>
+      </ion-item>
+    </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;" >Date of Birth</ion-label>
+          <span>{{data.birthDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Dt of Commission</ion-label>
+          <span>{{data.commisionDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Dt of Retirement/Death</ion-label>
+          <span>{{data.retirementDate}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="call-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Registered Mobile</ion-label>
+          <span>{{data.selfMobile}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="mail-open-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Registered EmailId</ion-label>
+          <span>{{data.selfEmail}}</span>
+        </ion-item>
+      </ion-card>
+      <ion-card class="details">
+        <ion-card-content>Editable</ion-card-content>
+      </ion-card>
+      <form  [formGroup]="personalForm" >
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">PPO No</ion-label>
+          <ion-input [readonly]="editppo"  formControlName="ppoNo"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Entry Type</ion-label>
+          <ion-input *ngIf="editcommnType" [readonly]="editcommnType"  formControlName="commnType"></ion-input>
+
+          <ion-select *ngIf="!editcommnType"   okText="Ok" cancelText="Dismiss"  formControlName="commnType">
+  
+            <ion-select-option *ngFor="let e of entryType" [value]="e.comn_type_cd">{{e.commn_type}}</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Commissioning Course Ser No</ion-label>
+        <ion-input [readonly]="editcourseSerNo"  formControlName="courseSerNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Arm/Service</ion-label>
+        <ion-input *ngIf="editcorpsName" [readonly]="editcorpsName"  formControlName="corpsName"></ion-input>
+
+        <ion-select *ngIf="!editcorpsName"  okText="Ok" cancelText="Dismiss"  formControlName="corpsName">
+  
+          <ion-select-option *ngFor="let a of armsServiceType" [value]="a.corp_cd">{{a.corp_name}}</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+      <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">PAN (Officer)</ion-label>
+        <ion-input [readonly]="editselfPan"  formControlName="selfPan"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="trophy-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Gallantry Award(if any)</ion-label>
+        <ion-input [readonly]="editgal"  formControlName="gal"></ion-input>
+      </ion-item>
+    </ion-card>
+    <!-- <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">War Injury/Disability Element</ion-label>
+        <ion-input [readonly]="{{editdisabStatus}}" [(ngModel)]="data.disabStatus"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">War Injury/Disability Element</ion-label>
+        <ion-input [readonly]="{{editdisabStatus}}" [(ngModel)]="data.disabStatus"></ion-input>
+      </ion-item>
+    </ion-card> -->
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">War Injury/Disability Element</ion-label>
+        <ion-input *ngIf="editdisabStatus" [readonly]="editdisabStatus"  formControlName="disabStatus"></ion-input>
+        <ion-select *ngIf="!editdisabStatus"  okText="Ok" cancelText="Dismiss"  formControlName="disabStatus">
+          <ion-select-option value="yes">Yes</ion-select-option>
+          <ion-select-option  value="no">No</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="invert-mode-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Disability % as per PPO</ion-label>
+        <ion-input [readonly]="editdisabPercent"  formControlName="disabPercent"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Aadhar (Officer)</ion-label>
+        <ion-input [readonly]="editselfAadhar" type="tel" maxlength="12"  formControlName="selfAadhar"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="call-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Alternate Mobile (user)</ion-label>
+        <ion-input [readonly]="editselfAltMobile"  formControlName="selfAltMobile"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">House_no</ion-label>
+        <ion-input [readonly]="edithouseNo"  formControlName="houseNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Street</ion-label>
+        <ion-input [readonly]="editmohSt"  formControlName="mohSt"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Village</ion-label>
+        <ion-input [readonly]="editvillage"  formControlName="village"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Post Office</ion-label>
+        <ion-input [readonly]="editpostOffice"  formControlName="postOffice"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Police_station</ion-label>
+        <ion-input [readonly]="editpoliceStation"  formControlName="policeStation"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Tehsil</ion-label>
+        <ion-input [readonly]="edittehsil"  formControlName="tehsil"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Pin Code</ion-label>
+        <ion-input [readonly]="editpinCode"  formControlName="pinCode"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;" >State</ion-label>
+        <ion-input *ngIf="editstateDesc" [readonly]="editstateDesc" formControlName="stateDesc"></ion-input>
+        <ion-select  *ngIf="!editstateDesc" okText="Ok" cancelText="Dismiss" (ionChange)="getDistrict($event)"  formControlName="stateDesc" >
+  
+          <ion-select-option *ngFor="let s of states" [value]="s.State_Code">{{s.State_Name}}</ion-select-option>
+          
+        </ion-select>
+        
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="home-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;" >District</ion-label>
+         <ion-input *ngIf="editdistrictDesc" [readonly]="editdistrictDesc" formControlName="districtDesc"></ion-input>
+        <ion-select  *ngIf="!editdistrictDesc"   okText="Ok" cancelText="Dismiss"  formControlName="districtDesc">
+  
+          <ion-select-option *ngFor="let d of district" [value]="d.District_Code">{{d.District_Name}}</ion-select-option>
+          
+        </ion-select>
+       
+      </ion-item>
+    </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-avatar slot="start" class="itemav">
+            <ion-icon name="person-outline" class="itemicon"></ion-icon>
+          </ion-avatar>
+          <ion-label position="stacked" style="font-size: 25px;">Spouse Name</ion-label>
+          <ion-input [readonly]="editspouseName" formControlName="spouseName"></ion-input>
+        </ion-item>
+      </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse Dt of Birth</ion-label>
+        <ion-datetime [readonly]="editspouseDob" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="spouseDob" formControlName="spouseDob"></ion-datetime>
+        <!-- <ion-input [readonly]="editspouseDob" (click)="showDatepicker()" pickerFormat="YYYY-MM-DD" [(ngModel)]="spouseDob" formControlName="spouseDob"></ion-input> -->
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/aadhar.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse Aadhar</ion-label>
+        <ion-input [readonly]="editspouseAadhar" type="tel" maxlength="12"  formControlName="spouseAadhar"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <img src="../../../assets/imgs/pan.jpeg">
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Spouse PAN</ion-label>
+        <ion-input [readonly]="editspousePanNo" type="text" maxlength="10" formControlName="spousePanNo"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+    <ion-item lines="none">
+    
+      <ion-label>Selected File</ion-label>
+      {{fileName}}
+      <ion-button (click)="selectFile()" style=" --background: #f9c67a; color:black">Select File</ion-button>
+    </ion-item>
+  </ion-card>
+    <ion-card style="height:90px">
+      <ion-item >
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="document-attach-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="    font-size: 25px;line-height: 33px;">Upload PPO(JPG & PDF format only)</ion-label>
+        <ion-item lines="none" style="margin-top: 7px;"> 
+          <ion-button style=" --background: #f9c67a; color:black" (click)="uploadFile()">Upload</ion-button>
+          <p *ngIf="uploadShow">{{uploadMsg}}</p>
+         </ion-item>
+         
+      </ion-item>
+      
+      
+    </ion-card>
+   </form>
+
+    <div class="action-button ion-padding">
+      <!-- <p class="forgetText" style="color: aliceblue" (click)="moveTo('2')">Forgot MPIN</p> -->
+      <ion-button expand="round"  class="login-button" style="color: black;" (click)="submit()">Submit</ion-button>
+      <ion-button expand="round"  class="login-button" style="color: black;margin-top: 5px;" (click)="updateEmailMobile()">Update EmailId/Mobile No.</ion-button>
+      <!-- <p class="forgetText" routerLink="/creatempin" style="color: aliceblue;margin-top: 3%;">Create MPIN</p> -->
+    </div>
+  </div>
+</ion-content> 

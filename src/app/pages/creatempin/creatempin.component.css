@@ -1,0 +1,61 @@
+ion-content {
+  --background:linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.1)),
+    url("../../../assets/imgs/otherbg.jpg") no-repeat center center / cover;
+}
+
+ion-content > div {
+  padding-top: 30%;
+}
+
+.logText {
+  padding-right: 5%;
+  text-align: right;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  font-family: -webkit-body;
+  font-weight: 600;
+  color: aliceblue;
+}
+
+.login-button {
+  --color: white;
+  opacity: 9999;
+  --background: #f9c67a;
+  width: 90%;
+  height: 50px;
+  margin: auto 5%;
+}
+
+ng-otp-input {
+  text-align: center;
+}
+
+ion-card {
+  width: auto;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.heading .logo {
+  width: auto;
+  height: 115px;
+  margin-top: -10%;
+}
+
+ion-avatar {
+  margin: auto;
+  width: 120px;
+  height: 86px;
+  border-radius: 50%;
+}
+
+.txt {
+  margin-left: 5%;
+  color: aliceblue;
+}
+
+ion-toolbar {
+  --background: #f8c06b;
+  color: white;
+}
+/*# sourceMappingURL=creatempin.component.css.map */

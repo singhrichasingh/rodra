@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EAEN,YAAY,CAAA,8DAAC;CAEd;;AACD,AAAA,CAAC,AAAA,iBAAiB,CAAA;EACd,eAAe,EAAE,IAAI;CACxB;;AACD,AAAA,QAAQ,CAAA;EACP,UAAU,EAAE,MAAM;EAClB,aAAa,EAAE,KAAK;EACpB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EAEZ,YAAY,CAAA,QAAC;CAKhB;;AAZE,AAQA,QARQ,CAQR,gBAAgB,CAAC;EAChB,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;CACf",
+    "sources": [
+        "downloadsecond.component.scss"
+    ],
+    "names": [],
+    "file": "downloadsecond.component.css"
+}

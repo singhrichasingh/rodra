@@ -1,0 +1,22 @@
+ion-content {
+    --background:linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.1)),
+    url("../../../assets/imgs/otherbg.jpg") no-repeat center center / cover;
+}
+.custom{
+    padding: 3% 5%;
+}
+li{
+    font-weight:900 ;
+    font-size: 22px;
+}
+ion-input{
+    width:98%;
+    height:35px;
+    margin-top: 8px;
+    margin-left: 5px;
+    background: aliceblue;
+    border:2px solid gray;
+}
+.highlightText {
+    background: yellow;
+}

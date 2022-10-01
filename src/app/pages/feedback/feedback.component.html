@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    FEEDBACK
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div   class="login-section ">
+    <div  class="login-form ion-padding">
+  <ion-card style="height: 90vh;background: white;">
+    <ion-card-header><h3>FEEDBACK</h3></ion-card-header>
+    <ion-card-content>
+      How do you rate this app?
+      <ion-row>
+<ion-col (click)="selectedEmoji($event,'1')">
+  <ion-row>
+  <img src="../../../assets/imgs/emoji1.png">
+</ion-row>
+<ion-row *ngIf="this.toShow=='1'">
+  <ion-icon style="padding-left: 28%;font-size: 2.2em;" name="checkmark-done"></ion-icon>
+</ion-row>
+</ion-col>
+<ion-col (click)="selectedEmoji($event,'2')">
+  <ion-row>
+  <img src="../../../assets/imgs/emoji2.png">
+</ion-row>
+<ion-row *ngIf="this.toShow=='2'">
+  <ion-icon style="padding-left: 28%;font-size: 2.2em;" name="checkmark-done"></ion-icon>
+</ion-row>
+</ion-col>
+<ion-col (click)="selectedEmoji($event,'3')">
+  <ion-row>
+  <img src="../../../assets/imgs/emoji3.png">
+</ion-row>
+<ion-row *ngIf="this.toShow=='3'" >
+  <ion-icon style="padding-left: 28%;font-size: 2.2em;" name="checkmark-done"></ion-icon>
+</ion-row>
+</ion-col>
+<ion-col (click)="selectedEmoji($event,'4')">
+  <ion-row>
+  <img src="../../../assets/imgs/emoji4.png">
+</ion-row>
+<ion-row *ngIf="this.toShow=='4'">
+  <ion-icon style="padding-left: 28%;font-size: 2.2em;" name="checkmark-done"></ion-icon>
+</ion-row>
+</ion-col>
+<ion-col (click)="selectedEmoji($event,'5')">
+  <ion-row>
+  <img src="../../../assets/imgs/emoji5.png">
+</ion-row>
+<ion-row *ngIf="this.toShow=='5'">
+  <ion-icon style="padding-left: 28%;font-size: 2.2em;" name="checkmark-done"></ion-icon>
+</ion-row>
+</ion-col>
+      </ion-row>
+      <!-- <img src="../../../assets/imgs/feedbackemoji.jpg"> -->
+      Would you like to add a comment?
+      <textarea style="width:80vw;height:30vh;background: white;" [(ngModel)]="comments" (keyup.enter)="sendFeedback()">
+
+      </textarea>
+      <ion-button style="color: black;  --background: #f9c67a;" (click)="sendFeedback()">Submit</ion-button>
+      <!-- <ion-button style="color: black;  --background: #f9c67a;" routerLink="/feedList">View Feedback List</ion-button> -->
+    </ion-card-content>
+  </ion-card>
+  </div>
+  </div>
+</ion-content>

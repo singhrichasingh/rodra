@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+    <ion-segment value="user" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="user">
+        <ion-label  style="color:whitesmoke">UserId</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="mpin">
+        <ion-label style="color:whitesmoke">MPIN</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <div  *ngIf="show" class="login-section ">
+   <div  class="login-form ion-padding">
+      <div class="form-input">
+         <ion-item lines="none">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+         <ion-input type="text" name="a" #a placeholder="ENTER USERID" [(ngModel)]="username" (keyup.enter)="moveFocus(b)" maxlength="8" id="textbox"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+         <ion-item lines="none">
+           <ion-buttons *ngIf="showpass" slot="start" (click)="toggleTextPassword('1')">
+            <ion-icon   class="itemicon" name="eye-off-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-buttons *ngIf="!showpass" slot="start" (click)="toggleTextPassword('2')">
+            <ion-icon   class="itemicon" name="eye-outline" ></ion-icon>
+          </ion-buttons>
+          <ion-input type="{{passtype}}" name="b" #b placeholder="PASSWORD" style="margin-left: -23px;"[(ngModel)]="password" (keyup.enter)="moveFocus(c)"></ion-input>
+        </ion-item>
+      </div>
+<div class="form-input">       
+        <ion-item lines="none">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+                <ion-input type="text" name="c" #c placeholder="ENTER CAPTCHA" (keyup.enter)="login()" [(ngModel)]="randomNumberEntered" ></ion-input>
+        </ion-item>
+      </div>
+      <ion-row>
+        <ion-col size="9">
+     <ion-item lines="none" style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+       <ion-text ><ion-col  class="captch">{{randomNumber}}</ion-col></ion-text>
+        </ion-item>
+   </ion-col>
+   <ion-col     style="color: aliceblue;">
+     <ion-buttons (click)="generateRandomNumber(1111,9999)" ><ion-icon name="refresh-circle-outline" style="font-size: 3.5em"></ion-icon></ion-buttons>
+   </ion-col>
+   </ion-row> 
+    </div>
+    <div class="action-button ion-padding">
+      <p class="forgetText" style="color: aliceblue" routerLink="/forgotPass">Forgot Password</p>
+      <ion-button expand="round" size="large" class="login-button"   (click)="login()" style="color:black" >Login</ion-button>
+      <h5 class="logText" routerLink="/home" style="color:aliceblue">Back To Home</h5>
+      <p style="color:aliceblue" (click)="registerIn()">Don't have an account?
+        <br/> <a style="color:aliceblue">Register Here!</a>
+        
+      </p>
+    </div>
+  </div>
+
+
+  
+  
+  
+  
+  <div *ngIf="dontshow" class="login-section ion-padding">
+    <div class="heading ion-padding">
+  
+    </div>
+    <div class="login-form ion-padding ">
+      <div>
+        <h3 style="color: aliceblue; margin-left: 9%;">ENTER MPIN</h3>
+        <div style="margin-left: 9%;">
+        <ng-otp-input class="otp"  #ngOtpInput autocomplete="false" (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+      </div>
+      </div>
+    </div>
+    <div class="action-button ion-padding">
+      <!-- <p class="forgetText" style="color: aliceblue" (click)="moveTo('2')">Forgot MPIN</p> -->
+      <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="loginWithMpin()">Login</ion-button>
+      <!-- <p class="forgetText" routerLink="/creatempin" style="color: aliceblue;margin-top: 3%;">Create MPIN</p> -->
+    </div>
+  </div>
+</ion-content>

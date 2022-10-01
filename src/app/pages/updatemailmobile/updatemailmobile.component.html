@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Update Mail / Mobile No
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card style="--background: #c73007">
+    <ion-segment value="mail" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="mail">
+        <ion-label style="color:whitesmoke">Update Mail</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="mobile">
+        <ion-label style="color:whitesmoke">Update Mobile No</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    </ion-card>
+    <div   class="login-section ion-padding" *ngIf="segmentValue=='mail'">
+      <div class="login-form">
+  <ion-card class="content-height" *ngIf="mailshow">
+    <div class="form-input">       
+      <ion-item lines="none" class="ion-item1">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-input type="email" placeholder="Email"  [(ngModel)]="email"></ion-input>
+      </ion-item>
+    </div>
+    
+    <div class="action-button ion-padding">
+    <ion-button expand="round" size="large" class="login-button" (click)="getOtp('1')" style="color:black" >Get OTP</ion-button>
+  </div>
+  </ion-card> 
+  <ion-card  class="content-height" *ngIf="!mailshow">
+  <div class="login-form ion-padding ">
+    <div>
+      <h3 style="color: black;">Enter OTP</h3>
+      <div style="margin-left: 9%;">
+      <ng-otp-input class="otp"  #ngOtpInput autocomplete="false" (onInputChange)="onOtpChange('1',$event)" [config]="config"></ng-otp-input>
+    </div>
+    </div>
+  </div>
+  <div class="action-button ion-padding">
+    <ion-button expand="round" size="large" class="login-button" (click)="submit('1')" style="color:black" >Submit</ion-button>
+  </div>
+  </ion-card>
+  </div>
+  </div>
+  <div class="login-section ion-padding" *ngIf="segmentValue=='mobile'">
+    <div class="login-form">
+<ion-card class="content-height"  *ngIf="mobileshow">
+  <div class="form-input">
+        
+    <ion-item lines="none" class="ion-item1">
+      <ion-icon name="call-outline"></ion-icon>
+      <ion-input type="tel"  maxlength="10" placeholder="Mobile" [(ngModel)]="mobile"></ion-input>
+    </ion-item>
+  </div>
+  
+  <div class="action-button ion-padding">
+  <ion-button expand="round" size="large" class="login-button" (click)="getOtp('2')" style="color:black" >Get OTP</ion-button>
+</div>
+</ion-card>
+<ion-card  class="content-height" *ngIf="!mobileshow">
+  <div class="login-form ion-padding ">
+    <div>
+      <h3 style="color: black;">Enter OTP</h3>
+      <div style="margin-left: 9%;">
+      <ng-otp-input class="otp"  #ngOtpInput autocomplete="false" (onInputChange)="onOtpChange('2',$event)" [config]="config"></ng-otp-input>
+    </div>
+    </div>
+  </div>
+  <div class="action-button ion-padding">
+    <ion-button expand="round" size="large" class="login-button" (click)="submit('2')" style="color:black" >Submit</ion-button>
+  </div>
+  </ion-card>
+</div>
+</div>
+
+
+
+    </ion-content>

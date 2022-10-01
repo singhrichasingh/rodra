@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+      <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      More
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;">
+      </ion-icon>
+      <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <!-- <ion-row> -->
+      <!-- <ion-col size="5"></ion-col> -->
+
+      <ion-button (click)="gotoLPC()" style=" color:black">Open LPC</ion-button>
+
+      <!-- </ion-row>    -->
+    </ion-item>
+    <ion-item>
+      <!-- <ion-row> -->
+      <!-- <ion-col size="5"></ion-col> -->
+
+      <ion-button (click)="invoiceOpen()" style="color:black">Print Details</ion-button>
+
+      <!-- </ion-row>    -->
+    </ion-item>
+
+    <!-- <ion-item>
+      
+      <input type="file" (change)="selectFile($event)" accept="image/jpeg, application/pdf" placeholder="Upload file">
+    
+      <ion-button (click)="uploadFile()">Upload LPC</ion-button>
+      
+    </ion-item> -->
+<ion-card>
+  <p *ngIf="uploadShow"  style="font-size: 18px;padding-left: 10px;font-weight: 400;">{{uploadMsg1}}</p>
+    <ion-item>
+      {{fileName}}
+      <ion-button (click)="selectFile('1')" style=" color:black" >Select File</ion-button>
+      <ion-button (click)="uploadFile('1')" style=" color:black">Upload LPC</ion-button>
+      
+    </ion-item>
+    
+  </ion-card>
+
+
+
+<ion-card>
+  <p *ngIf="uploadShow1" style="font-size: 18px;padding-left: 10px;font-weight: 400;" >{{uploadMsg2}}</p>
+    <ion-item>
+    
+     
+    {{fileName1}}
+    <ion-button (click)="selectFile('2')" style=" color:black">Select File</ion-button>
+    <ion-button (click)="uploadFile('2')" style=" color:black">Upload Misc Docs</ion-button>
+    
+    </ion-item>
+   
+  </ion-card>
+  </ion-card>
+</ion-content>

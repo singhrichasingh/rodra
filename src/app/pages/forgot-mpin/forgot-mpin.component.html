@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Forgot MPIN
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="login-form ion-padding ">
+    <div class="form-input">
+      
+      <ion-item lines="none">
+        <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        <!-- <ion-label position="floating">Email</ion-label> -->
+        <ion-input type="text" placeholder="ENTER PERSONAL NUMBER" [(ngModel)]="username" maxlength="8" id="textbox"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      
+      <ion-item lines="none">
+        <ion-icon name="mail-outline"></ion-icon>
+        <!-- <ion-icon name="eye-off-outline"></ion-icon> -->
+        <!-- <ion-label position="floating">Email</ion-label> -->
+        <ion-input type="Email" placeholder="ENTER EMAIL ID" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      
+      <ion-item lines="none">
+        <ion-icon name="call-outline"></ion-icon>
+        <!-- <ion-label position="floating">Email</ion-label> -->
+        <ion-input type="tel" maxlength="10" placeholder="REGISTERED MOBILE NUMBER" [(ngModel)]="mobile"></ion-input>
+      </ion-item>
+    </div>
+    <div class="form-input">
+      
+      <ion-item lines="none" (click)="showDatepicker()" >
+        <ion-icon name="calendar-outline"></ion-icon>
+        <ion-datetime style="padding-left:65px" displayFormat="DD-MM-YYYY" placeholder="DATE OF BIRTH" max="{{today}}"  [(ngModel)]="dob">
+        </ion-datetime>
+        </ion-item>
+    </div>
+  </div>
+</ion-content>

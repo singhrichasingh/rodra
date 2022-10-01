@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,YAAY,CAAA;2EAAC;CAEhB;;AACD,AAAA,QAAQ,CAAA;EACJ,UAAU,EAAE,EAAE;EACd,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,SAAS;CACxB",
+    "sources": [
+        "videogallery.component.scss"
+    ],
+    "names": [],
+    "file": "videogallery.component.css"
+}

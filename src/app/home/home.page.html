@@ -1,0 +1,36 @@
+
+  <ion-content [fullscreen]="true">
+    <div >
+    <!-- <img style="margin:0;padding:0;height: 90vh;width:100vw" src="../../assets/imgs/RodraCover.jpg"/> -->
+    <ion-row style="padding-top:3% ;width: 100vw;">
+      <ion-col size="10" (click)="signup()" ><img style="margin-left: 5%;" width="60px" src="../../assets/imgs/SignUp1.png"/></ion-col>
+      <ion-col size="2" (click)="extrenal()" ><img  width="45px" src="../../assets/imgs/external.png"/></ion-col>
+     </ion-row>
+
+    </div>
+</ion-content>
+<ion-footer style="">
+    <ion-toolbar style="--background:#f9c67a;border-top:2px solid #f9cb9c">
+    <ion-row style="color:rgb(104, 104, 247)">
+      <ion-col size="5" style="text-align: center;padding-left:4%" routerLink="/login">
+        <ion-row>
+        <img width="45px" src="../../assets/imgs/login.png">
+      </ion-row>
+      <ion-row>Login</ion-row>
+      </ion-col>
+      <ion-col size="5" style="text-align: center;" routerLink="/faq">
+        <ion-row>
+        <img width="45px" src="../../assets/imgs/faq.png">
+      </ion-row>
+        <ion-row>FAQs</ion-row>
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" (click)="openmenu()">
+        <ion-row>
+        <img  width="45px" src="../../assets/imgs/bottommenu.png">
+      </ion-row>
+        <ion-row>Menu</ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+
+</ion-footer>

@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar style="    --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="dismiss()">
+      <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+       LPC Form
+    </ion-title>
+
+  </ion-toolbar>
+ </ion-header>
+ <ion-content>
+   <div #PrintInvoice>
+  <div  class="invoice-box" style="margin-top: 4%;">
+    <div>
+      <table style="border-collapse: collapse;width: 100%;">
+        <tr>
+          <td >Pensioner</td>
+          <td >Officer</td>
+          <td >Spouse</td>
+          <td >Family Pensioner<ion-checkbox checked="true" style="margin-left: 4px;"></ion-checkbox></td>
+        </tr>
+        <tr>
+          <td >Telephone</td>
+          <td >.............</td>
+          <td >Name</td>
+          <td >.............</td>
+        </tr>
+        <tr>
+          <td >Mobile</td>
+          <td >.............</td>
+          <td >Address</td>
+          <td >.............</td>
+        </tr>
+        <tr>
+          <td >City</td>
+          <td >..............</td>
+          <td >Date</td>
+          <td >.............</td>
+        </tr>
+      </table>
+    
+    </div>
+    <div>
+    </div>
+    <br/>
+    <div>
+      <p class="to" style="font-size: 15px;  margin: 9px; width: 60%;">To,<br>
+        Addl Dte Gen of Manpower Planning/MP-5(b)
+        <br/>
+        AG's Branch, IHQ of MoD(Army)
+        <br/>
+        Wing No-3 Ground Floor,West Block-III
+        <br/>
+        RK Puram, New Delhi-66</p>
+    </div>
+    <div>
+      <h3 style="text-align: center;font-weight: bold;text-decoration: underline;">LPC-CUM-DATA-SHEET</h3>
+    </div>
+    <div>
+      <p class="dear" style="font-size: 14px;">Dear sir,<br>
+        1.&nbsp;&nbsp;In order to record date of birth in PPO for addtion pension in terms of Para 12 of GoI ,MoD Revised Pension letter
+        17(45)/2008(1)D/Pen/Policy) dated 11 Nov 2008, Data Sheet designed by PCDA (P) for issue of Corregdum PPO is
+        provided below:-</p>
+    </div>
+
+
+ <ion-grid >
+ 
+
+<table style="border-collapse: collapse;width: 100%;border: 1px solid black;">
+<tr><th style="border: 1px solid black;">a.</th><th colspan="5" style="border: 1px solid black;">Details of Officer</th></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">i</td><td style="border: 1px solid black;">Rank</td><td style="border: 1px solid black;">{{editData.rank_desc}}</td><td style="border: 1px solid black;">Name</td><td style="border: 1px solid black;">{{editData.name}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">ii</td><td style="border: 1px solid black;">Service No</td><td style="border: 1px solid black;">{{editData.personal_no}}</td><td style="border: 1px solid black;">Date of Retirement</td><td style="border: 1px solid black;">{{editData.Retire_dt}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iii</td><td style="border: 1px solid black;">Original PPO No</td><td style="border: 1px solid black;">{{editData.PPO_No}}</td><td style="border: 1px solid black;">Latest Corregendium PPO</td><td style="border: 1px solid black;">{{editData.corr_ppo}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iv</td><td style="border: 1px solid black;">Date of Birth</td><td style="border: 1px solid black;">{{editData.Self_DOB}}</td><td style="border: 1px solid black;">Aadhar Card No</td><td style="border: 1px solid black;">{{editData.Self_Aadhar}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">v.</td><td style="border: 1px solid black;">PAN Card No</td><td style="border: 1px solid black;">{{editData.self_PAN}}</td><td style="border: 1px solid black;">Email Id</td><td style="border: 1px solid black;">{{editData.Self_Email}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">vi.</td><td style="border: 1px solid black;">Mob No</td><td style="border: 1px solid black;">{{editData.Self_Mobile}}</td><td style="border: 1px solid black;">Commision Date</td><td style="border: 1px solid black;">{{editData.comn_dt}}</td></tr>
+<tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">vii.</td><td style="border: 1px solid black;">Net Qualifying Service</td><td style="border: 1px solid black;">{{editData.NQSYR}}</td><td style="border: 1px solid black;">-{{editData.NQSMTH}}</td><td style="border: 1px solid black;">-{{editData.NQSDAYS}}</td></tr>
+</table>
+  <table style="border-collapse: collapse;width: 100%;border: 1px solid black;margin-top: 6px">
+    <tr><th style="border: 1px solid black;">b.</th><th colspan="5" style="border: 1px solid black;">Spouse</th></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">i</td><td style="border: 1px solid black;">Name</td><td style="border: 1px solid black;">{{editData.NOK_Name}}</td><td style="border: 1px solid black;">Date of Birth</td><td style="border: 1px solid black;">{{editData.NOK_DOB}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">ii</td><td style="border: 1px solid black;">Aadhar Card No</td><td style="border: 1px solid black;">{{editData.NOK_Aadhar}}</td><td style="border: 1px solid black;">PAN Card No</td><td style="border: 1px solid black;">{{editData.NOK_PAN}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iii</td><td style="border: 1px solid black;">Email ID</td><td style="border: 1px solid black;" colspan="5">{{editData.NOK_Email}}</td></tr>
+   </table>
+  <table style="border-collapse: collapse;width: 100%;border: 1px solid black;margin-top: 6px">
+    <tr><th style="border: 1px solid black;">c.</th><th colspan="5" style="border: 1px solid black;">Family Pensioner(Parents/Unmarried/Widowed/Divorced Daughter/Handicapped Child(Only if
+      applicable)</th></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">i</td><td style="border: 1px solid black;">Name</td><td style="border: 1px solid black;">{{editData.Depn_Name}}</td><td style="border: 1px solid black;">Date of Birth</td><td style="border: 1px solid black;">{{editData.Depn_DOB}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">ii</td><td style="border: 1px solid black;">Aadhar Card No</td><td style="border: 1px solid black;">{{editData.Depn_Aadhar}}</td><td style="border: 1px solid black;">Email ID</td><td style="border: 1px solid black;">{{editData.Depn_Email}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iii</td><td style="border: 1px solid black;">Mobile No</td><td style="border: 1px solid black;" colspan="5">{{editData.Depn_Mobile}}</td></tr>
+   </table>
+
+  <table style="border-collapse: collapse;width: 100%;border: 1px solid black;margin-top: 6px">
+    <tr><th style="border: 1px solid black;">d.</th><th colspan="5" style="border: 1px solid black;">Bank Details (To be ascertained from Bankers)</th></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">i</td><td style="border: 1px solid black;">BSR code of Link Branch</td><td style="border: 1px solid black;">{{editData.BSR_Code_Link_br}}</td><td style="border: 1px solid black;">Link Br & Address</td><td style="border: 1px solid black;">{{editData.Link_Br_Add}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">ii</td><td style="border: 1px solid black;">Pension Bank A/C</td><td style="border: 1px solid black;">{{editData.Pensioner_Acct_No}}</td><td style="border: 1px solid black;">BSR Code of Pension Paying Bank</td><td style="border: 1px solid black;">{{editData.BSRCode_paying_Bank}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iii</td><td style="border: 1px solid black;">Address of Br Paying Pension</td><td style="border: 1px solid black;">{{editData.pension_paying_br_add}}</td><td style="border: 1px solid black;">Pension Paying Bank City</td><td style="border: 1px solid black;">{{editData.City_name_paying_bank}}</td></tr>
+    <tr><td style="border: 1px solid black;"></td><td style="border: 1px solid black;">iv</td><td style="border: 1px solid black;">PIN Code</td><td style="border: 1px solid black;">{{editData.pin_code}}</td><td style="border: 1px solid black;">IFSC Code</td><td style="border: 1px solid black;">{{editData.IFSC_Code}}</td></tr>
+   </table>
+
+</ion-grid>
+   </div>
+   <div>
+    <p class="dear" style="font-size: 11px;margin: 9px;">
+      2.&nbsp;&nbsp;Necessary documents duly attested by Gazetted officers are attached (copy of Aadhar Card and PAN Card of self
+      and spouse) as proof of birth of spouse/family pensioner alonghwith copies of Original and Corrigendum PPOs).</p>
+  </div>
+  <div><p class="since" style="font-size: 11px;margin: 9px;text-align: right;margin-right: 7%;">Your's sincerly</p></div>
+  <div>
+    </div>
+    <p class="since1" style=" margin-top: 10%;font-size: 11px; margin: 9px; text-align: right; margin-right: 7%;">Sig of Offr/Family Pensioner,</p>
+  </div>
+   <ion-button (click)="downloadInvoice()">Download</ion-button>
+ </ion-content>

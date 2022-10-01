@@ -1,0 +1,377 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+     <ion-buttons slot="start" (click)="showMenu()">
+      <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+    View NEMS(BC/PC)
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+      <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+ <ion-content>
+  <ion-card class="details">
+    <ion-card-content>NOK PENSION ENTITLEMENT DETAILS AND TRACKING</ion-card-content>
+  </ion-card>
+  <div>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Personal No</ion-label>
+        <span>{{nemsInfo.pin}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Name</ion-label>
+        <span>{{nemsInfo.name}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="podium-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Rank</ion-label>
+        <span>{{nemsInfo.rank_desc}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">NOK Name</ion-label>
+        <span>{{nemsInfo.NOK_name}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="aperture-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Relation</ion-label>
+        <span>{{nemsInfo.Relation}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Casualty Date
+        </ion-label>
+        <span>{{nemsInfo.Cas_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Docu desp to NOK on</ion-label>
+        <span>{{nemsInfo.docu_desp_nok_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Docu recd on
+        </ion-label>
+        <span>{{nemsInfo.docu_recd_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">BC Declared by MP5D on</ion-label>
+        <span>{{nemsInfo.bc_decl_5d_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="stats-chart-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Pension Applicable</ion-label>
+        <span>{{nemsInfo.Pen_applicable}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="stats-chart-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Admisibility of Pension</ion-label>
+        <span>{{nemsInfo.pen_adm}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="aperture-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">Nature of Casualty
+        </ion-label>
+        <span>{{nemsInfo.BC_PC}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">OFP to PCDA(P)</ion-label>
+        <span>{{nemsInfo.ofp_to_pcda_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">OFP PPO recd on</ion-label>
+        <span>{{nemsInfo.ofp_ppo_recd_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">OFP PPO desp on</ion-label>
+        <span>{{nemsInfo.ofp_ppo_desp_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="wallet-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">OFP Amt Recd</ion-label>
+        <span>{{nemsInfo.ofp_amt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP Docus Recd on</ion-label>
+        <span>{{nemsInfo.sfp_docu_recd}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP Adjudicated on</ion-label>
+        <span>{{nemsInfo.sfp_ppo_desp_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="shield-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP Status</ion-label>
+        <span>{{nemsInfo.sfp_status}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP to PCDA(P)</ion-label>
+        <span>{{nemsInfo.sfp_to_pcda_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP PPO recd on</ion-label>
+        <span>{{nemsInfo.sfp_docu_recd}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP PPO desp on</ion-label>
+        <span>{{nemsInfo.sfp_ppo_desp_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="wallet-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">SFP Amt Recd</ion-label>
+        <span>{{nemsInfo.sfp_amt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">LFP to PCDA(P)</ion-label>
+        <span>{{nemsInfo.lfp_to_pcda_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">LFP PPO recd on</ion-label>
+        <span>{{nemsInfo.lfp_ppo_recd_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="calendar-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">LFP PPO desp on</ion-label>
+        <span>{{nemsInfo.lfp_ppo_desp_dt}}</span>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start" class="itemav">
+          <ion-icon name="wallet-outline" class="itemicon"></ion-icon>
+        </ion-avatar>
+        <ion-label position="stacked" style="font-size: 25px;">LFP Amt Recd</ion-label>
+        <span>{{nemsInfo.lfp_amt}}</span>
+      </ion-item>
+    </ion-card>
+  </div>
+  <ion-card class="details">
+    <ion-card-content>ENTITLED GRANTS PAYMENT STATUS</ion-card-content>
+  </ion-card>
+  <ion-card>
+  <div class="table">
+    <ion-grid>
+      <ion-row class="rowHeading">
+        <ion-col size="3" >
+          <div>
+           Grants
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+           Amount Paid
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            Paid On
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            Remark If any
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let x of name" class="col2">
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.name}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.amount}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.paid}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+            {{x.remark}}
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-card>
+<ion-card class="details">
+  <ion-card-content>GRANTS PAYMENT BASED ON TYPE OF CASUALTY </ion-card-content>
+</ion-card>
+<ion-card>
+  <div class="table">
+    <ion-grid>
+      <ion-row class="rowHeading">
+        <ion-col size="3" >
+          <div>
+           Grants
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+           Applicability
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+            Amount Paid
+          </div>
+        </ion-col>
+        <ion-col size="2">
+          <div>
+            Paid On
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let x of secTrench" class="col2">
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.name}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+            {{x.appli}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.amount}}
+          </div>
+        </ion-col>
+        <ion-col size="3" class="col1">
+          <div>
+           {{x.paid}}
+          </div>
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-card>
+ </ion-content>

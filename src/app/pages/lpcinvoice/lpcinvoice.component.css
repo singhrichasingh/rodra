@@ -1,0 +1,56 @@
+.ion-col {
+  border: 1px solid grey;
+  text-align: left;
+  font-size: 12px;
+}
+
+.anotherdiv {
+  margin-top: 3px;
+}
+
+.to {
+  font-size: 11px;
+  margin: 9px;
+  width: 60%;
+}
+
+.dear {
+  font-size: 11px;
+  margin: 9px;
+}
+
+.since {
+  font-size: 11px;
+  margin: 9px;
+  text-align: right;
+  margin-right: 7%;
+}
+
+.since1 {
+  margin-top: 10%;
+  font-size: 11px;
+  margin: 9px;
+  text-align: right;
+  margin-right: 7%;
+}
+
+.pp {
+  font-size: 11px;
+}
+
+.text1 {
+  font-size: 11px;
+}
+
+.line {
+  border-bottom: 1px solid grey;
+}
+
+.rowtext {
+  margin: 0 4px;
+}
+
+.invoice-box {
+  margin-top: 4%;
+}
+/*# sourceMappingURL=lpcinvoice.component.css.map */

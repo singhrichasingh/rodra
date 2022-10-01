@@ -1,0 +1,29 @@
+ion-content{
+    // --background:linear-gradient(#ff0000,#ff1a1a,#ff3333,#ff5050 ,#ff6666,#ff8080);
+     --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+   // --background-size: 300px 100px
+   }
+   a:-webkit-any-link{
+       text-decoration: none;
+   }
+   .details{
+    text-align: center;
+    border-radius: unset;
+    width: 100%;
+    margin: 4px auto;
+    color: black;
+    // height: 40px;
+    --background: #f9c67a;
+   ion-card-content {
+    font-size: 1.4em;
+    font-weight: 700;
+    }
+}
+ion-input{
+    width:98%;
+    height:35px;
+    margin-top: 8px;
+    margin-left: 5px;
+    background: aliceblue;
+    border:2px solid gray;
+}

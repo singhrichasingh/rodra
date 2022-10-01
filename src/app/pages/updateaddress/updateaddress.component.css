@@ -1,0 +1,80 @@
+ion-content {
+  --background: url('../../../assets/imgs/otherbg.jpg') center center / cover;
+}
+
+.avt {
+  margin: auto;
+  width: 80px;
+  height: 80px;
+}
+
+.logodiv {
+  margin-top: 10%;
+}
+
+ion-label {
+  --font-size: 25px;
+}
+
+span {
+  font-size: 17px;
+  margin-top: 3%;
+  color: blue;
+  margin-bottom: 4%;
+  font-weight: 700;
+}
+
+ion-card {
+  border-radius: 10px;
+}
+
+.itemav {
+  text-align: center;
+  margin: auto;
+  margin-right: 7px;
+}
+
+.itemicon {
+  margin-top: 5%;
+  font-size: 34px;
+}
+
+.details {
+  text-align: center;
+  border-radius: unset;
+  width: 100%;
+  margin: auto;
+  color: black;
+  --background: #f9c67a;
+}
+
+ion-textarea, ion-input, ion-select {
+  background: white;
+  border-bottom: 1px solid black;
+  border-radius: 10px;
+}
+
+ion-input, ion-select {
+  height: 54px;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+}
+
+.firstRow {
+  margin-top: 15px;
+}
+
+.login-button {
+  --background: #f9c67a;
+  text-align: center;
+}
+
+p {
+  color: #034398;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+/*# sourceMappingURL=updateaddress.component.css.map */

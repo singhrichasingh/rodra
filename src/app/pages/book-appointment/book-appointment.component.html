@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Prior Intimation of Visit
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+   </ion-buttons>
+ </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <!-- <form [formGroup]="scheduleForm" (ngSubmit)="submit()"> -->
+  <div class="login-section">
+    <div class="login-form ion-padding">
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-icon name="bag-outline"></ion-icon>
+          <ion-input type="text" placeholder="Purpose of visit" name="a" #a (keyup.enter)="moveFocus(b)" [(ngModel)]="purpose"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <!-- <ion-item lines="none" (click)="showDatepicker()" class="ion-item1">
+          <ion-icon name="calendar-outline"></ion-icon>
+        <ion-datetime style="padding-left:65px" displayFormat="DD-MM-YYYY"  placeholder="Date of Visit" min="{{today}}"  [(ngModel)]="appointmentDate">
+          </ion-datetime>
+        </ion-item> -->
+        <ion-item lines="none" (click)="openDatePicker()" class="ion-item1">
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-input type="text" readonly [(ngModel)]="appointmentDate" placeholder="Date of appointment" name="appointmentDate" displayFormat="DD/MM/YYYY"></ion-input> 
+        </ion-item>
+      </div>
+        <div class="form-input">
+        
+          <ion-item lines="none">
+            <ion-icon name="alarm-outline"></ion-icon>
+              <ion-select (ionChange)="selectSlot($event)"  placeholder="Time Slot"  [value]="profile" ok-text="Ok" style="max-height: 100%;"
+                cancel-text="Cancel">
+                <ion-select-option value="1">10:00 -11:00 </ion-select-option>
+                <ion-select-option value="2">11:00 -12:00 </ion-select-option>
+                <ion-select-option value="3">12:00 -13:00 </ion-select-option>
+                <ion-select-option value="4">14:00 -15:00 </ion-select-option>
+                <ion-select-option value="5">15:00 -16:00 </ion-select-option>
+                <ion-select-option value="6">16:00 -17:00 </ion-select-option>
+              </ion-select>
+            <!-- </div> -->
+          </ion-item>
+        </div>
+        <div class="form-input">
+        
+          <ion-item lines="none"  class="ion-item1">
+
+            <ion-icon name="alarm-outline"></ion-icon>
+            <ion-datetime style="padding-left:65px" min="{{min}}" max="{{max}}" displayFormat="HH:mm"  placeholder="Preferred Time" [(ngModel)]="preferTime"></ion-datetime>
+            <!-- <ion-input type="text" placeholder="Preferred Time" value="{{preferTime}}"></ion-input> -->
+          </ion-item>
+        </div>
+        <div class="form-input">
+        
+          <ion-item lines="none">
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-input type="tel" maxlength="10" minlength="10" [(ngModel)]="mobile" placeholder="Mobile Number" name="b" #b (keyup.enter)="moveFocus(c)"  pattern="(0/91)?[0-9]{10}"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">       
+          <ion-item lines="none">
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="email"  placeholder="Email ID" [(ngModel)]="mail" name="c" #c (keyup.enter)="submit()" pattern="^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$" ></ion-input>
+          </ion-item>
+        </div>
+     
+    </div>
+    <div class="action-button ion-padding">
+      <!-- <ion-button style="color: black;  --background: #f9c67a;" (click)="submit()">Submit</ion-button>
+      <ion-button style="color: black;  --background: #f9c67a;" routerLink="/scheduleList">View Earlier Visit</ion-button> -->
+      <ion-button size="small" class="login-button"  style="color:rgb(110, 10, 10)" (click)="submit()">Submit</ion-button>
+      <ion-button  size="small" class="login-button" routerLink="/scheduleList" style="color:rgb(110, 10, 10);margin-top:5px;">View Earlier Visit</ion-button>
+      <ion-button  size="small" class="login-button" routerLink="/scheduleListFuture" style="color:rgb(110, 10, 10);margin-top:5px;">View Scheduled Visit</ion-button>
+    </div>
+    <!-- <h5 class="logText" routerLink="/scheduleList" style="color:aliceblue">View Scheduled List</h5> -->
+  </div>
+<!-- </form> -->
+</ion-content>

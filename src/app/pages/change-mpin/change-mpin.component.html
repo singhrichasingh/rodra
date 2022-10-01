@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar style=" --background: #c73007;color: whitesmoke">
+    <ion-buttons slot="start" (click)="showMenu()">
+     <ion-icon style="--color:whitesmoke;font-size: 1.5em;" name="ellipsis-vertical-outline"></ion-icon>
+   </ion-buttons>
+   <ion-buttons slot="start">
+     <ion-back-button style="--color:whitesmoke" defaultHref="/personalInfo"></ion-back-button>
+   </ion-buttons>
+   <ion-title>
+    Change MPIN
+   </ion-title>
+   <ion-buttons slot="end">
+     <ion-icon name="log-out-outline" (click)="logout()" style="--color:rgb(143, 106, 106);font-size: 1.7em;"></ion-icon>
+     <p (click)="logout()">Sign Out</p>
+    </ion-buttons>
+ </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <div  class="login-section ion-padding">
+  <div class="login-form ion-padding" >
+    <div>
+      <h3 class="txt">Enter Old MPIN</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event,'1')"  autocomplete="false" [config]="config"></ng-otp-input>
+    </div>
+    <div>
+      <h3 class="txt">Enter New MPIN</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event,'2')" autocomplete="false"[config]="config"></ng-otp-input>
+    </div>
+    <div>
+      <h3 class="txt">Confirm MPIN</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event,'3')" autocomplete="false" [config]="config"></ng-otp-input>
+    </div>
+    <div class="form-input">       
+      <ion-item lines="none" style="border-radius: 12px;">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input type="text" placeholder="Enter Captcha" [(ngModel)]="randomNumberEntered"></ion-input>
+      </ion-item>
+    </div>
+    <ion-row>
+      <ion-col size="9">
+   <ion-item lines="none" style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+    
+     <ion-text ><ion-col  class="captch">{{randomNumber}}</ion-col></ion-text>
+     
+   </ion-item>
+ </ion-col>
+ <ion-col     style="color: aliceblue;">
+   <ion-buttons (click)="generateRandomNumber(1111,9999)" ><ion-icon name="refresh-circle-outline" style="font-size: 3.5em"></ion-icon></ion-buttons>
+ </ion-col>
+ </ion-row> 
+    <div class="action-button ion-padding">
+      <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="changePin()">Change MPIN</ion-button>
+    </div>
+    <!-- <div class="action-button ion-padding">
+      <p class="forgetText" style="color: aliceblue" routerLink="/forgotMpin">Forgot MPIN</p>
+    </div> -->
+  </div>
+  </div>
+</ion-content>

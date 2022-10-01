@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EAEN,YAAY,CAAA,8DAAC;CAEd;;AACD,AAAA,CAAC,AAAA,iBAAiB,CAAA;EACd,eAAe,EAAE,IAAI;CACxB;;AACD,AAAA,YAAY,CAAA;EACR,MAAM,EAAE,cAAc;CACzB",
+    "sources": [
+        "feedback.component.scss"
+    ],
+    "names": [],
+    "file": "feedback.component.css"
+}

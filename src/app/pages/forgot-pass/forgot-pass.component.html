@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start" >
+      <ion-back-button style="color:aliceblue" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      Forgot Password
+    </ion-title>   
+  </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <div *ngIf="show" class="login-section ion-padding">
+    
+    <div class="login-form ion-padding ">
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-icon name="person-outline" class="itemicon"></ion-icon>
+          <!-- <ion-label position="floating">Email</ion-label> -->
+          <ion-input type="text" placeholder="ENTER PERSONAL NUMBER" [(ngModel)]="username" maxlength="8" id="textbox"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-icon name="mail-outline"></ion-icon>
+          <!-- <ion-icon name="eye-off-outline"></ion-icon> -->
+          <!-- <ion-label position="floating">Email</ion-label> -->
+          <ion-input type="Email" placeholder="ENTER EMAIL ID" [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        
+        <ion-item lines="none">
+          <ion-icon name="call-outline"></ion-icon>
+          <!-- <ion-label position="floating">Email</ion-label> -->
+          <ion-input type="tel" maxlength="10" placeholder="REGISTERED MOBILE NUMBER" [(ngModel)]="mobile"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        
+        <ion-item lines="none" (click)="showDatepicker()" >
+          <ion-icon name="calendar-outline"></ion-icon>
+          <ion-datetime style="padding-left:52px" displayFormat="DD-MM-YYYY" placeholder="DATE OF BIRTH" max="{{today}}"  [(ngModel)]="dob">
+          </ion-datetime>
+        </ion-item>
+      </div>
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="getOtp()">Submit</ion-button>
+    </div>
+  </div>
+  <div *ngIf="!show" class="login-section ion-padding">
+    <div class="login-form ion-padding ">
+    <div class="form-input">
+    <div>
+      <h3 class="txt" style="color:aliceblue">ENTER OTP</h3>
+      <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+    </div>
+    <div class="form-input" style="margin-top: 9%;">
+    </div>
+      <ion-item lines="none" >
+        <ion-buttons *ngIf="showpass" slot="start" (click)="toggleTextPassword('1')">
+          <ion-icon   class="itemicon" name="eye-off-outline" ></ion-icon>
+        </ion-buttons>
+        <ion-buttons *ngIf="!showpass" slot="start" (click)="toggleTextPassword('2')">
+          <ion-icon   class="itemicon" name="eye-outline" ></ion-icon>
+        </ion-buttons>
+        <ion-input type="{{passtype}}"  placeholder="PASSWORD" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+  <div class="action-button ion-padding">
+    <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="changePass()">Change Password</ion-button>
+  </div>
+  </div>
+</ion-content>

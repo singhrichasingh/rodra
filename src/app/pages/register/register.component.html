@@ -1,0 +1,261 @@
+<ion-header>
+  <ion-toolbar style="--background: #c73007">
+    <ion-buttons slot="start">
+      <ion-back-button style="color:aliceblue" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:aliceblue">
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <div *ngIf="show" class="login-section">
+    <div class="login-form ion-padding"> -->
+  <div *ngIf="show" class="login-section">
+    <form [formGroup]="registrationForm">
+      <div class="login-form ion-padding">
+        <div class="form-input">
+
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" class="disable-pointer-events" type="text" required="true"
+              formControlName="username" placeholder="PERSONAL NO OF OFFICER" maxlength="8" id="textbox" name="a" #a (keyup.enter)="moveFocus(b)"></ion-input>
+
+          </ion-item>
+          <div *ngFor="let error of errorMessages.username">
+            <ng-container *ngIf="username.hasError(error.type) && (username.dirty || username.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+          <p style="color: #efef2b;">(IC38001 Without Suffix)</p>
+        </div>
+        <!-- <div class="form-input">
+
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="text" style="padding:10px" formControlName="name" placeholder="USER NAME"
+              required="true" name="b" #b (keyup.enter)="moveFocus(c)"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.name">
+            <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div> -->
+
+        <div class="form-input">
+
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="call-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="tel" maxlength="10" placeholder="MOBILE" type="tel" maxlength="10"
+              formControlName="phone" required="true" name="c" #c (keyup.enter)="moveFocus(d)"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.phone">
+            <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="email" inputmode="email" formControlName="email" placeholder="EMAIL"
+              required="true" name="d" #d (keyup.enter)="moveFocus(e)"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.email">
+            <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="form-input">
+          <ion-item lines="none" (click)="showDatepicker('1')" class="ion-item1">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="text" style="padding:10px" formControlName="dob" required="true"
+              placeholder="DATE OF BIRTH" [(ngModel)]="dobdate"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.dob">
+            <ng-container *ngIf="dob.hasError(error.type) && (dob.dirty || dob.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none" (click)="showDatepicker('2')" class="ion-item1">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="text" style="padding:10px" formControlName="doc" required="true"
+              placeholder="DATE OF COMMISSION" [(ngModel)]="dobdate1"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.doc">
+            <ng-container *ngIf="doc.hasError(error.type) && (doc.dirty || doc.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none" (click)="showDatepicker('3')" class="ion-item1">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="text" style="padding:10px" formControlName="dor" required="true"
+              placeholder="DATE OF RETIREMENT/DEATH IN SERVICE" [(ngModel)]="dobdate2"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.dor">
+            <ng-container *ngIf="dor.hasError(error.type) && (dor.dirty || dor.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+        <div>
+          <div class="form-input">
+            <ion-item lines="none" class="ion-item1">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+                onDrop="return false" type="text" formControlName="captcha" placeholder="ENTER CAPTCHA" [(ngModel)]="randomNumberEntered" name="e" #e ></ion-input>
+            </ion-item>
+          </div>
+          <ion-row>
+            <ion-col size="9">
+              <ion-item lines="none"
+                style="width:40%;color:white;font-size: 1.2em;font-weight: 700;--background: lightsalmon;">
+
+                <ion-text>
+                  <ion-col class="captcha">{{randomNumber}}</ion-col>
+                </ion-text>
+              </ion-item>
+            </ion-col>
+            <ion-col style="padding-top: 30px;color: aliceblue;">
+              <ion-buttons (click)="generateRandomNumber(1111,9999)">
+                <ion-icon name="refresh-circle-outline" style="font-size: 3.5em"></ion-icon>
+              </ion-buttons>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div class="registeras">
+          <ion-radio-group value="1" (ionChange)="select($event)">
+            <ion-list-header>
+              <ion-label>
+                <h1>Register As</h1>
+              </ion-label>
+            </ion-list-header>
+            <ion-item class="ion-text-wrap">
+              <ion-label class="ion-text-wrap">Officer (Only when veteran officer is alive)</ion-label>
+              <ion-radio slot="start" color="success" value="1"></ion-radio>
+            </ion-item>
+
+            <ion-item class="regas">
+              <ion-label class="ion-text-wrap">Spouse getting Family Pension</ion-label>
+              <ion-radio slot="start" color="tertiary" value="2"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label class="ion-text-wrap">Dependent getting Family Pension</ion-label>
+              <ion-radio slot="start" color="danger" value="3"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </div>
+      </div>
+
+      <div class="action-button ion-padding">
+        <ion-button expand="round" size="large" class="login-button" (click)="getOtp()" style="color:black">Get Otp
+        </ion-button>
+        <h5 class="logText" routerLink="/home" style="color:aliceblue">Back To Home</h5>
+      </div>
+    </form>
+  </div>
+
+
+  <div *ngIf="show1" class="login-section ion-padding">
+    <div class="login-form ion-padding ">
+      <div class="form-input">
+        <div>
+          <h3 class="txt" style="color:aliceblue">Enter Otp</h3>
+          <ng-otp-input class="otp" #ngOtpInput (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+        </div>
+      </div>
+    </div>
+
+    
+<div class="action-button ion-padding">
+      <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="submitOtp()">Submit
+        OTP
+      </ion-button>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="show2" class="login-section ion-padding">
+    <form [formGroup]="registrationForm">
+      <div class="login-form ion-padding ">
+        <!-- <div class="form-input">
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" class="disable-pointer-events" type="text" required="true" value="{{username}}" disabled="true"
+                maxlength="8" id="textbox"></ion-input>
+          </ion-item>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none" class="ion-item1">
+            <ion-icon name="person-outline"></ion-icon>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="text" style="padding:10px" value="{{name}}" disabled="true"
+              required="true"></ion-input>
+          </ion-item>
+        </div> -->
+        <div class="form-input">
+          <ion-item lines="none" class="ion-item1">
+            <ion-buttons *ngIf="showpass1" slot="start" (click)="toggleTextPassword('1','1')">
+              <ion-icon class="itemicon" name="eye-off-outline"></ion-icon>
+            </ion-buttons>
+            <ion-buttons *ngIf="!showpass1" slot="start" (click)="toggleTextPassword('1','2')">
+              <ion-icon class="itemicon" name="eye-outline"></ion-icon>
+            </ion-buttons>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="{{passtype1}}" formControlName="password" required="true"
+              placeholder="PASSWORD"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password">
+            <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-input">
+          <ion-item lines="none" class="ion-item1">
+            <ion-buttons *ngIf="showpass2" slot="start" (click)="toggleTextPassword('2','1')">
+              <ion-icon class="itemicon" name="eye-off-outline"></ion-icon>
+            </ion-buttons>
+            <ion-buttons *ngIf="!showpass2" slot="start" (click)="toggleTextPassword('2','2')">
+              <ion-icon class="itemicon" name="eye-outline"></ion-icon>
+            </ion-buttons>
+            <ion-input onPaste="return false" onCopy="return false" onCut="return false" onDrag="return false"
+              onDrop="return false" type="{{passtype2}}" formControlName="password1" required="true"
+              placeholder="CONFIRM PASSWORD"></ion-input>
+          </ion-item>
+          <div *ngFor="let error of errorMessages.password1">
+            <ng-container *ngIf="password1.hasError(error.type) && (password1.dirty || password1.touched)">
+              <small class="error-message">{{error.message}}</small>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="action-button ion-padding">
+        <ion-button expand="round" size="large" class="login-button" style="color: black;" (click)="register()">Register
+        </ion-button>
+      </div>
+    </form>
+  </div>
+
+</ion-content>
